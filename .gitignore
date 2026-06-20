@@ -1,0 +1,52 @@
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.backup
+.env.production
+
+# Build outputs
+dist/
+dist-ssr/
+public/build/
+public/hot
+public/storage
+
+# SQLite databases
+*.sqlite
+database/database.sqlite
+.phpunit.result.cache
+.phpunit.cache/
+
+# IDEs and Editors
+.vscode/
+.idea/
+.fleet/
+.nova/
+.zed/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+auth.json
+
+# Large Archives (Optional but recommended)
+*.zip
+*.tar.gz

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Kinga Resorts</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="image assets/logos/color1-white_icon_transparent_background.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image%20assets/logos/color1-white_icon_transparent_background.png" alt="Kinga Icon"
+                    class="navbar-icon">
+                <img src="image%20assets/logos/color1-white_textlogo_transparent_background.png"
+                    alt="Kinga Resorts Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="accommodations.html">Accommodations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="booking.html" class="btn btn-primary-gold active">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Hero -->
+    <header class="booking-hero d-flex align-items-center justify-content-center text-white position-relative"
+        style="background-image: url('image%20assets/hotel%20rooms/dad-hotel-Y-bJWAjPzsY-unsplash.jpg'); background-size: cover; background-position: center;">
+        <div class="position-absolute w-100 h-100 top-0 start-0" style="background: rgba(0,0,0,0.5);"></div>
+        <div class="container position-relative text-center z-1">
+            <h1 class="display-4 mb-3">Reserve Your Sanctuary</h1>
+            <p class="lead">Begin your journey to relaxation.</p>
+        </div>
+    </header>
+
+    <!-- Main Booking Section -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Booking Steps & Room List -->
+                <div class="col-lg-8">
+
+                    <!-- Step 1: Dates & Guests -->
+                    <div class="booking-step active" id="step1">
+                        <h3 class="h5 mb-4 text-gold">1. Your Dates & Party</h3>
+                        <div class="card border-0 shadow-sm p-4 mb-5">
+                            <form id="bookingFilters">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label small fw-bold text-muted">Check-in</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                            <input type="date" class="form-control" id="checkInDate" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small fw-bold text-muted">Check-out</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-calendar-check"></i></span>
+                                            <input type="date" class="form-control" id="checkOutDate" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small fw-bold text-muted">Guests</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
+                                            <select class="form-select" id="guestCount">
+                                                <option value="1">1 Adult</option>
+                                                <option value="2" selected>2 Adults</option>
+                                                <option value="3">3 Adults</option>
+                                                <option value="4">4 Adults</option>
+                                                <option value="family">Family (2 Adults, 2 Kids)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Select Room -->
+                    <div class="booking-step" id="step2">
+                        <h3 class="h5 mb-4 text-gold">2. Choose Accommodation</h3>
+                        <div class="room-list d-grid gap-4">
+
+                            <!-- Garden Villa -->
+                            <div class="card room-select-card" data-room-id="garden" data-price="52500">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="image%20assets/hotel%20rooms/gabriel-alenius-lTrbjFd8Iwo-unsplash.jpg"
+                                            class="img-fluid h-100 object-fit-cover rounded-start" alt="Garden Villa">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h4 class="h5 card-title mb-0">Garden Villa</h4>
+                                                <div class="text-end">
+                                                    <div class="price-tag">KES 52,500</div>
+                                                    <small class="text-muted">per night</small>
+                                                </div>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">55m² • Garden View • Plunge Pool
+                                                • King Bed</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <a href="#" class="text-gold small text-decoration-none">View Details <i
+                                                        class="fas fa-chevron-right ms-1"></i></a>
+                                                <button class="btn btn-outline-gold select-room-btn">Select
+                                                    Room</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ocean Suite -->
+                            <div class="card room-select-card" data-room-id="ocean" data-price="82500">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="image%20assets/hotel%20rooms/linus-mimietz-p3UWyaujtQo-unsplash.jpg"
+                                            class="img-fluid h-100 object-fit-cover rounded-start" alt="Ocean Suite">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h4 class="h5 card-title mb-0">Ocean Suite</h4>
+                                                <div class="text-end">
+                                                    <div class="price-tag">KES 82,500</div>
+                                                    <small class="text-muted">per night</small>
+                                                </div>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">80m² • Ocean Front • Balcony •
+                                                Jacuzzi</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <a href="#" class="text-gold small text-decoration-none">View Details <i
+                                                        class="fas fa-chevron-right ms-1"></i></a>
+                                                <button class="btn btn-outline-gold select-room-btn">Select
+                                                    Room</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Royal Penthouse -->
+                            <div class="card room-select-card" data-room-id="royal" data-price="180000">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="image%20assets/hotel%20rooms/point3d-commercial-imaging-ltd-oxeCZrodz78-unsplash.jpg"
+                                            class="img-fluid h-100 object-fit-cover rounded-start"
+                                            alt="Royal Penthouse">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h4 class="h5 card-title mb-0">Royal Penthouse</h4>
+                                                <div class="text-end">
+                                                    <div class="price-tag">KES 180,000</div>
+                                                    <small class="text-muted">per night</small>
+                                                </div>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">150m² • Panoramic View • Private
+                                                Pool • Butler</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <a href="#" class="text-gold small text-decoration-none">View Details <i
+                                                        class="fas fa-chevron-right ms-1"></i></a>
+                                                <button class="btn btn-outline-gold select-room-btn">Select
+                                                    Room</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Guest Details -->
+                    <div class="booking-step mt-5" id="step3">
+                        <h3 class="h5 mb-4 text-gold">3. Guest Details</h3>
+                        <div class="card border-0 shadow-sm p-4">
+                            <form id="guestDetailsForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small">First Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small">Last Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small">Email</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small">Phone</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small">Special Requests</label>
+                                        <textarea class="form-control" rows="3"
+                                            placeholder="Dietary restrictions, anniversary celebration, etc."></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Booking Summary Sidebar -->
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="booking-summary-box p-4 rounded bg-white">
+                        <h4 class="h5 mb-4 border-bottom pb-2">Booking Summary</h4>
+
+                        <div class="summary-details mb-4">
+                            <div class="summary-row">
+                                <span class="text-muted">Check-in:</span>
+                                <span class="fw-bold" id="summaryCheckIn">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="text-muted">Check-out:</span>
+                                <span class="fw-bold" id="summaryCheckOut">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="text-muted">Nights:</span>
+                                <span class="fw-bold" id="summaryNights">0</span>
+                            </div>
+                            <div class="summary-row mt-3">
+                                <span class="text-muted">Room:</span>
+                                <span class="fw-bold text-end w-50" id="summaryRoom">Select a room</span>
+                            </div>
+                        </div>
+
+                        <div class="price-breakdown">
+                            <div class="summary-row">
+                                <span class="text-muted">Room Rate:</span>
+                                <span id="summaryRate">KES 0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="text-muted">Taxes & Fees (10%):</span>
+                                <span id="summaryTaxes">KES 0</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-total d-flex justify-content-between">
+                            <span>Total</span>
+                            <span id="summaryTotal">KES 0</span>
+                        </div>
+
+                        <button id="confirmBookingBtn" class="btn btn-primary-gold w-100 mt-4" disabled>Coming
+                            Soon</button>
+                        <p class="text-center text-muted small mt-2"><i class="fas fa-lock me-1"></i> Secure Booking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white-50 py-5 mt-5">
+        <div class="container text-center">
+            <img src="image%20assets/logos/white_textlogo_dark_background.png" alt="Kinga Resorts"
+                class="footer-logo mb-3">
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Booking Logic -->
+    <script src="booking.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,997 @@
+/* 
+ * Kinga Resorts - Custom Styles
+ * Theme: Classic Luxury, Organic, Spacious
+ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary-gold: #E0B33A;
+    --primary-gold-hover: #c79d2b;
+    --bg-cream: #FDF8E4;
+    --text-charcoal: #333333;
+    --white: #FFFFFF;
+    --light-grey: #f8f9fa;
+    /* Bootstrap default light, keeping for utility */
+
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-charcoal);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll from animations */
+    /* Mobile optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+    font-family: var(--font-serif);
+    color: var(--text-charcoal);
+}
+
+.lead {
+    font-weight: 300;
+}
+
+/* Navbar Customization */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--primary-gold) !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.navbar-brand .navbar-icon {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: var(--text-charcoal) !important;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-left: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-gold) !important;
+}
+
+/* Buttons */
+.btn-primary-gold {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    color: var(--white);
+    border-radius: 0;
+    /* Classic sharp edges or maybe slightly rounded, going with 0 for elegant feel */
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-gold:hover {
+    background-color: var(--primary-gold-hover);
+    border-color: var(--primary-gold-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--primary-gold);
+    color: var(--white);
+}
+
+/* Hero Carousel Section */
+.hero-carousel {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Carousel Navigation Dots */
+.carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Carousel Arrow Navigation */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+.carousel-arrow.prev {
+    left: 30px;
+}
+
+.carousel-arrow.next {
+    right: 30px;
+}
+
+/* Legacy hero-section class for compatibility */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 4rem;
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-gold);
+    margin: 1rem auto 0;
+}
+
+/* Cards */
+.card-custom {
+    border: none;
+    border-radius: 0;
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-family: var(--font-serif);
+    color: var(--text-charcoal);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2c2c2c;
+    color: #aeaeae;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+}
+
+footer h5 {
+    color: var(--primary-gold);
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+}
+
+footer a {
+    color: #aeaeae;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-gold);
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Welcome Splash Screen */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOutOverlay 1s ease-out 1.5s forwards;
+    pointer-events: none;
+}
+
+.welcome-logo {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    animation: logoFadeIn 0.8s ease-out, logoFadeOut 0.8s ease-out 1.2s forwards;
+}
+
+@keyframes fadeOutOverlay {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes logoFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+}
+
+/* ========================================
+   STICKY BOOKING BAR
+   ======================================== */
+#stickyBookingBar {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.15);
+    padding: 1rem 0;
+    z-index: 1000;
+    transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#stickyBookingBar.show {
+    bottom: 0;
+}
+
+.booking-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.booking-bar-text {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-charcoal);
+}
+
+/* ========================================
+   PARALLAX EFFECTS
+   ======================================== */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-gold);
+    color: var(--white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus Visible for Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-gold: #D4A017;
+        --text-charcoal: #000000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================
+   TRUST & SECURITY BADGES
+   ======================================== */
+.trust-badges {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #aeaeae;
+    font-size: 0.9rem;
+}
+
+.trust-badge i {
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+}
+
+/* ========================================
+   REVIEWS SECTION
+   ======================================== */
+.review-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-left: 3px solid var(--primary-gold);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+    color: var(--primary-gold);
+    margin-bottom: 0.5rem;
+}
+
+.review-author {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* ========================================
+   DIRECT BOOKING INCENTIVE BANNER
+   ======================================== */
+.incentive-banner {
+    background: linear-gradient(135deg, var(--primary-gold) 0%, #c79d2b 100%);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.incentive-banner i {
+    margin-right: 0.5rem;
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+img {
+    content-visibility: auto;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Will-change for frequently animated elements */
+.card-custom,
+.btn-primary-gold,
+.btn-outline-gold,
+.nav-link {
+    will-change: transform;
+}
+
+/* ========================================
+   RESPONSIVE ENHANCEMENTS
+   ======================================== */
+
+/* Mobile First - Small devices (phones, up to 576px) */
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .hero-section {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    .navbar-brand .navbar-icon {
+        height: 32px;
+        margin-right: 8px;
+    }
+
+    .welcome-logo {
+        max-width: 280px;
+    }
+
+    .booking-step {
+        font-size: 0.85rem;
+    }
+
+    .room-select-card {
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+        height: 45px;
+    }
+
+    .btn-primary-gold,
+    .btn-outline-gold {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (576px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-section {
+        height: 65vh;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .welcome-logo {
+        max-width: 350px;
+    }
+}
+
+/* General medium and below (tablets and phones) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        height: 70vh;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .booking-bar-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+
+    /* Stack cards vertically on mobile */
+    .card-custom {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Adjust booking summary to stack on mobile */
+    .booking-summary-box {
+        position: relative;
+        margin-top: 2rem;
+    }
+
+    /* Make accommodation images full width */
+    .accommodations img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Stack form elements vertically */
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group>* {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Large tablets and small desktops (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Larger touch targets */
+    .btn,
+    .nav-link,
+    .carousel-arrow,
+    .carousel-dot {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .card-custom:hover {
+        transform: none;
+    }
+
+    .btn-primary-gold:hover,
+    .btn-outline-gold:hover {
+        transform: none;
+    }
+}
+
+/* Landscape orientation for phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        height: 90vh;
+    }
+
+    .welcome-overlay {
+        padding: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .navbar,
+    .booking-bar,
+    .incentive-banner,
+    .welcome-overlay,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+}
+
+/* ========================================
+   ICON COLOR UTILITIES
+   ======================================== */
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+/* ========================================
+   GUEST SERVICES SECTION
+   ======================================== */
+.service-icon-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-icon-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   FAQ ACCORDION
+   ======================================== */
+.accordion-button:not(.collapsed) {
+    background-color: var(--bg-cream);
+    color: var(--primary-gold);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(224, 179, 58, 0.25);
+    border-color: var(--primary-gold);
+}
+
+.accordion-button::after {
+    filter: grayscale(1);
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: sepia(100%) hue-rotate(5deg) saturate(500%);
+}
+
+/* ========================================
+   BOOKING PAGE STYLES
+   ======================================== */
+.booking-hero {
+    height: 50vh;
+    min-height: 400px;
+}
+
+.booking-step {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid #e9ecef;
+}
+
+.booking-step:last-child {
+    border-left: none;
+    padding-bottom: 0;
+}
+
+.booking-step::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 2px solid #adb5bd;
+    transition: all 0.3s ease;
+}
+
+.booking-step.active::before {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+.booking-step.completed::before {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    content: '✓';
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Room Selection Card */
+.room-select-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.room-select-card:hover {
+    border-color: var(--primary-gold);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.room-select-card.selected {
+    border-color: var(--primary-gold);
+    background-color: #fdfcf5;
+    transform: scale(1.01);
+}
+
+.price-tag {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    font-weight: 700;
+}
+
+/* Booking Summary Box */
+.booking-summary-box {
+    position: sticky;
+    top: 100px;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.summary-total {
+    border-top: 2px solid var(--primary-gold);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-charcoal);
+}
+
+/* Date Picker Customization */
+.form-control:focus {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(224, 179, 58, 0.25);
+}
+
+.input-group-text {
+    background-color: var(--bg-cream);
+    border-color: #ced4da;
+    color: var(--primary-gold);
+}

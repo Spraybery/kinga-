@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kinga Resorts - Luxury nature retreat offering premium accommodations, fine dining, and exclusive experiences. Book your escape to paradise today.">
+    <meta name="keywords"
+        content="luxury resort, nature retreat, boutique hotel, premium accommodation, spa resort, beach resort">
+    <meta name="author" content="Kinga Resorts">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kingaresorts.com/">
+    <meta property="og:title" content="Kinga Resorts | Luxury Nature Retreat">
+    <meta property="og:description"
+        content="Adventure In Comfort, Luxury In Nature. Experience ultimate escapeприватний.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1571896349842-6e53ce41e887?w=1200&h=630&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kingaresorts.com/">
+    <meta property="twitter:title" content="Kinga Resorts | Luxury Nature Retreat">
+    <meta property="twitter:description" content="Adventure In Comfort, Luxury In Nature.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1571896349842-6e53ce41e887?w=1200&h=630&fit=crop">
+
+    <title>Kinga Resorts | Luxury Nature Retreat</title>
+
+    <!-- Preconnect to External Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="icon" type="image/png" href="image assets/logos/color1-white_icon_transparent_background.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Kinga Resorts",
+        "description": "Luxury nature retreat offering premium accommodations and exclusive experiences",
+        "url": "https://kingaresorts.com",
+        "telephone": "+1-555-123-4567",
+        "email": "reservations@kingaresorts.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Paradise Road",
+            "addressLocality": "Serenity Bay",
+            "postalCode": "45678",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.0343",
+            "longitude": "-77.3963"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "287"
+        },
+        "priceRange": "KES",
+        "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+            {"@type": "LocationFeatureSpecification", "name": "Spa"},
+            {"@type": "LocationFeatureSpecification", "name": "Restaurant"},
+            {"@type": "LocationFeatureSpecification", "name": "Pool"}
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Welcome Splash Screen -->
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <img src="image%20assets/logos/white_logo_dark_background.png" alt="Kinga Resorts" class="welcome-logo">
+    </div>
+
+    <!-- Direct Booking Incentive Banner -->
+    <div class="incentive-banner" role="banner">
+        <i class="fas fa-gift"></i>
+        <strong>Best Rate Guarantee:</strong> Book direct and save 15% + Free WiFi + Late Checkout
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Kinga Resorts Home">
+                <img src="image%20assets/logos/color1-white_icon_transparent_background.png" alt="Kinga Icon"
+                    class="navbar-icon">
+                <img src="image%20assets/logos/color1-white_textlogo_transparent_background.png"
+                    alt="Kinga Resorts Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="accommodations.html">Accommodations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dining.html">Dining</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="experiences.html">Experiences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="accommodations.html" class="btn btn-primary-gold" aria-label="Book your stay now">Book
+                            Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Carousel -->
+        <header class="hero-carousel" role="banner" tabindex="0" aria-label="Resort showcase carousel">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active"
+                style="background-image: url('image%20assets/caurosels%20and%20hotel%20cenaries/ish-consul-ccKvfKSKH-k-unsplash.jpg');">
+                <div class="container hero-content">
+                    <h1>Adventure In Comfort,<br>Luxury In Nature</h1>
+                    <p class="lead">Experience the ultimate escape in our pristine sanctuary.</p>
+                    <a href="accommodations.html" class="btn btn-primary-gold btn-lg mt-3">Explore Your Stay</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide"
+                style="background-image: url('image%20assets/caurosels%20and%20hotel%20cenaries/fernando-alvarez-rodriguez-M7GddPqJowg-unsplash.jpg');">
+                <div class="container hero-content">
+                    <h1>Unparalleled Elegance</h1>
+                    <p class="lead">Where modern luxury meets timeless sophistication.</p>
+                    <a href="accommodations.html" class="btn btn-primary-gold btn-lg mt-3">View Accommodations</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide"
+                style="background-image: url('image%20assets/caurosels%20and%20hotel%20cenaries/artem-bryzgalov-wB07pAw7n3c-unsplash.jpg');">
+                <div class="container hero-content">
+                    <h1>Your Private Paradise</h1>
+                    <p class="lead">Discover serenity in our exclusive oceanfront retreat.</p>
+                    <a href="experiences.html" class="btn btn-primary-gold btn-lg mt-3">Discover Experiences</a>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-slide"
+                style="background-image: url('image%20assets/caurosels%20and%20hotel%20cenaries/valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg');">
+                <div class="container hero-content">
+                    <h1>Culinary Excellence</h1>
+                    <p class="lead">Savor world-class cuisine in breathtaking settings.</p>
+                    <a href="dining.html" class="btn btn-primary-gold btn-lg mt-3">Explore Dining</a>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-arrow prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="carousel-arrow next" aria-label="Next slide">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" role="tablist" aria-label="Carousel navigation">
+                <button class="carousel-dot active" aria-label="Go to slide 1" role="tab"></button>
+                <button class="carousel-dot" aria-label="Go to slide 2" role="tab"></button>
+                <button class="carousel-dot" aria-label="Go to slide 3" role="tab"></button>
+                <button class="carousel-dot" aria-label="Go to slide 4" role="tab"></button>
+            </div>
+        </header>
+
+        <!-- Intro Section -->
+        <section class="container" aria-labelledby="intro-heading">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="image%20assets/caurosels%20and%20hotel%20cenaries/2h-media-PVcohn4eUto-unsplash.jpg"
+                        alt="Elegant resort interior with modern furnishings" class="img-fluid rounded shadow-sm"
+                        loading="lazy">
+                </div>
+                <div class="col-md-6 ps-md-5">
+                    <h2 id="intro-heading">A Sanctuary for the Soul</h2>
+                    <p class="text-muted">Nestled in the heart of untouched wilderness, Kinga Resorts offers a unique
+                        blend of modern luxury and natural beauty. Whether you seek thrilling adventures or peaceful
+                        rejuvenation, our resort is designed to be your perfect hideaway.</p>
+                    <p class="text-muted">Indulge in our world-class amenities, savor gourmet dining inspired by local
+                        flavors, and let the sounds of nature lull you into serenity.</p>
+                    <a href="experiences.html" class="btn btn-outline-gold mt-2">Discover Experiences</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Accommodations -->
+        <section class="bg-cream-light py-5" style="background-color: var(--light-grey);"
+            aria-labelledby="accommodations-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="accommodations-heading">Accommodations</h2>
+                    <p class="text-muted">Elegance meets wilderness</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <article class="card card-custom h-100" tabindex="0" role="article"
+                            aria-labelledby="garden-villas">
+                            <img src="image%20assets/hotel%20rooms/gabriel-alenius-lTrbjFd8Iwo-unsplash.jpg"
+                                class="card-img-top" alt="Garden Villa with private plunge pool" loading="lazy">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" id="garden-villas">Garden Villas</h3>
+                                <p class="card-text">Private havens surrounded by lush flora, perfect for couples
+                                    seeking intimacy.</p>
+                                <p class="fw-bold text-gold">From KES 52,500/night</p>
+                                <a href="accommodations.html" class="btn btn-outline-gold btn-sm">View Details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="card card-custom h-100" tabindex="0" role="article"
+                            aria-labelledby="ocean-suites">
+                            <img src="image%20assets/hotel%20rooms/linus-mimietz-p3UWyaujtQo-unsplash.jpg"
+                                class="card-img-top" alt="Ocean Suite with panoramic views" loading="lazy">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" id="ocean-suites">Ocean Suites</h3>
+                                <p class="card-text">Breathtaking views of the horizon with spacious balconies and
+                                    premium amenities.</p>
+                                <p class="fw-bold text-gold">From KES 82,500/night</p>
+                                <a href="accommodations.html" class="btn btn-outline-gold btn-sm">View Details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="card card-custom h-100" tabindex="0" role="article"
+                            aria-labelledby="royal-penthouse">
+                            <img src="image%20assets/hotel%20rooms/point3d-commercial-imaging-ltd-oxeCZrodz78-unsplash.jpg"
+                                class="card-img-top" alt="Royal Penthouse with private pool" loading="lazy">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" id="royal-penthouse">Royal Penthouse</h3>
+                                <p class="card-text">The pinnacle of luxury with panoramic views, private pool, and
+                                    butler service.</p>
+                                <p class="fw-bold text-gold">From KES 180,000/night</p>
+                                <a href="accommodations.html" class="btn btn-outline-gold btn-sm">View Details</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guest Reviews Section -->
+        <section class="container py-5" aria-labelledby="reviews-heading">
+            <div class="section-title">
+                <h2 id="reviews-heading">What Our Guests Say</h2>
+                <p class="text-muted">Verified reviews from our valued guests</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="review-card">
+                        <div class="review-stars" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"An absolutely magical experience. The staff went above and beyond to make our honeymoon
+                            unforgettable. The Garden Villa was pure paradise!"</p>
+                        <p class="review-author">- Sarah M., New York</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="review-card">
+                        <div class="review-stars" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The perfect blend of luxury and nature. Waking up to ocean views every morning was a dream.
+                            Highly recommend the spa treatments!"</p>
+                        <p class="review-author">- James T., London</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Guest Services -->
+        <section class="py-5 bg-light" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="services-heading">Guest Services</h2>
+                    <p class="text-muted">Experience world-class hospitality</p>
+                </div>
+                <div class="row g-4 text-center">
+                    <div class="col-md-3 sol-sm-6">
+                        <div class="service-icon-box p-4 bg-white rounded shadow-sm h-100">
+                            <i class="fas fa-clock fa-2x text-gold mb-3"></i>
+                            <h4>Round-the-Clock</h4>
+                            <p class="small text-muted mb-0">24/7 Front Desk & Concierge Service</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 sol-sm-6">
+                        <div class="service-icon-box p-4 bg-white rounded shadow-sm h-100">
+                            <i class="fas fa-wifi fa-2x text-gold mb-3"></i>
+                            <h4>High-Speed WiFi</h4>
+                            <p class="small text-muted mb-0">Complimentary access throughout the resort</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 sol-sm-6">
+                        <div class="service-icon-box p-4 bg-white rounded shadow-sm h-100">
+                            <i class="fas fa-spa fa-2x text-gold mb-3"></i>
+                            <h4>Wellness Spa</h4>
+                            <p class="small text-muted mb-0">Rejuvenate your body and mind</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 sol-sm-6">
+                        <div class="service-icon-box p-4 bg-white rounded shadow-sm h-100">
+                            <i class="fas fa-shuttle-van fa-2x text-gold mb-3"></i>
+                            <h4>Airport Transfer</h4>
+                            <p class="small text-muted mb-0">Seamless travel to and from the airport</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Special Offers & Packages -->
+        <section class="py-5" aria-labelledby="offers-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="offers-heading">Exclusive Packages</h2>
+                    <p class="text-muted">Curated experiences just for you</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100 border-0 shadow overflow-hidden">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-5 position-relative">
+                                    <img src="image%20assets/hotel%20spar/engin-akyurt-IxX6XrMfu4U-unsplash.jpg"
+                                        class="h-100 w-100 object-fit-cover" alt="Spa treatment" loading="lazy">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body d-flex flex-column justify-content-center h-100 p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-gold text-white">Most Popular</span>
+                                            <small class="text-muted">3 Days / 2 Nights</small>
+                                        </div>
+                                        <h3 class="h5">Wellness Retreat Package</h3>
+                                        <p class="card-text small text-muted">Includes daily spa treatments, yoga
+                                            sessions, and healthy gourmet meals.</p>
+                                        <div class="mt-auto">
+                                            <p class="fw-bold text-gold fs-5 mb-2">KES 85,000</p>
+                                            <a href="booking.html?package=wellness"
+                                                class="btn btn-sm btn-outline-gold stretched-link">Book Package</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100 border-0 shadow overflow-hidden">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-5 position-relative">
+                                    <img src="image%20assets/caurosels%20and%20hotel%20cenaries/2h-media-PVcohn4eUto-unsplash.jpg"
+                                        class="h-100 w-100 object-fit-cover" alt="Romantic dinner" loading="lazy">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body d-flex flex-column justify-content-center h-100 p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-dark text-white">Couples</span>
+                                            <small class="text-muted">4 Days / 3 Nights</small>
+                                        </div>
+                                        <h3 class="h5">Honeymoon Bliss</h3>
+                                        <p class="card-text small text-muted">Ocean suite stay, romantic candlelight
+                                            dinner on the beach, and couple's massage.</p>
+                                        <div class="mt-auto">
+                                            <p class="fw-bold text-gold fs-5 mb-2">KES 120,000</p>
+                                            <a href="booking.html?package=honeymoon"
+                                                class="btn btn-sm btn-outline-gold stretched-link">Book Package</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Hotel Policies & FAQ -->
+        <section class="py-5 bg-cream-light" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 mb-4 mb-lg-0">
+                        <h2 id="faq-heading" class="mb-4">Essential Information</h2>
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <h4 class="h5 text-gold mb-3"><i class="fas fa-clock me-2"></i>Check-in & Check-out</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex justify-content-between border-bottom py-2">
+                                    <span>Check-in Time</span>
+                                    <strong>14:00 (2:00 PM)</strong>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom py-2">
+                                    <span>Check-out Time</span>
+                                    <strong>11:00 (11:00 AM)</strong>
+                                </li>
+                                <li class="pt-2 text-muted small">
+                                    <i class="fas fa-info-circle me-1"></i> Early check-in and late check-out available
+                                    upon request subject to availability.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card border-0 shadow-sm p-4">
+                            <h4 class="h5 text-gold mb-3"><i class="fas fa-calendar-check me-2"></i>Scheduling</h4>
+                            <p class="small text-muted mb-3">Plan your stay activities in advance.</p>
+                            <a href="contact.html#schedule" class="btn btn-outline-dark w-100">Schedule Activities</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <h3 class="h4 mb-4">Frequently Asked Questions</h3>
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item border-0 mb-2 shadow-sm rounded overflow-hidden">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is the cancellation policy?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        We offer free cancellation up to 48 hours before your scheduled check-in time.
+                                        Cancellations made within 48 hours will be charged for the first night of the
+                                        stay.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-2 shadow-sm rounded overflow-hidden">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Are pets allowed at the resort?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        We are a pet-friendly resort! We welcome well-behaved pets in our Garden Villas.
+                                        A small cleaning fee applies, and advanced notice is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-2 shadow-sm rounded overflow-hidden">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Do you offer dietary specific menus?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Absolutely. Our culinary team is happy to cater to vegetarian, vegan,
+                                        gluten-free, and other dietary requirements. Please inform us upon booking or
+                                        check-in.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h2 class="h3 mb-2">Subscribe to our Newsletter</h2>
+                        <p class="text-white-50 mb-0">Stay updated with our latest offers and seasonal events.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="row g-2">
+                            <div class="col-sm-8">
+                                <label for="newsletterEmail" class="visually-hidden">Email address</label>
+                                <input type="email" class="form-control border-0" id="newsletterEmail"
+                                    placeholder="Enter your email" required>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-primary-gold w-100">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img src="image%20assets/logos/white_textlogo_dark_background.png" alt="Kinga Resorts"
+                        class="footer-logo">
+                    <p>Adventure In Comfort,<br>Luxury In Nature.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="accommodations.html">Accommodations</a></li>
+                        <li class="mb-2"><a href="experiences.html">Experiences</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-gold" aria-hidden="true"></i> 123
+                            Paradise Road, Serenity Bay</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2 text-gold" aria-hidden="true"></i> <a
+                                href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2 text-gold" aria-hidden="true"></i> <a
+                                href="mailto:reservations@kingaresorts.com">reservations@kingaresorts.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <span>Secure Booking</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <span>5-Star Rated</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>SSL Encrypted</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <span>Best Price Guarantee</span>
+                </div>
+            </div>
+
+            <div class="row mt-4 pt-4 border-top border-secondary">
+                <div class="col-12 text-center text-muted small">
+                    <p>&copy; 2025 Kinga Resorts. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a
+                            href="#">Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Enhanced Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

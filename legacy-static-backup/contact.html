@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Kinga Resorts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="image assets/logos/color1-white_icon_transparent_background.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="image%20assets/logos/color1-white_icon_transparent_background.png" alt="Kinga Icon"
+                    class="navbar-icon">
+                <img src="image%20assets/logos/color1-white_textlogo_transparent_background.png"
+                    alt="Kinga Resorts Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="accommodations.html">Accommodations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a href="accommodations.html" class="btn btn-primary-gold">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-section"
+        style="height: 50vh; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image%20assets/caurosels%20and%20hotel%20cenaries/atikah-akhtar-stREw6BF8mE-unsplash.jpg');">
+        <div class="container hero-content text-center">
+            <h1>Contact Us</h1>
+            <p class="lead">We're here to help plan your perfect stay</p>
+        </div>
+    </header>
+
+    <!-- Contact Form & Info -->
+    <section class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6">
+                <h3>Get in Touch</h3>
+                <p class="text-muted mb-4">Have questions about our rooms, dining, or experiences? Fill out the form
+                    below and we will get back to you shortly.</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Full Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select class="form-select" id="subject">
+                            <option selected>General Inquiry</option>
+                            <option value="1">Reservations</option>
+                            <option value="2">Events & Weddings</option>
+                            <option value="3">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary-gold">Send Message</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="ps-md-5">
+                    <h3>Contact Information</h3>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-4 d-flex">
+                            <i class="fas fa-map-marker-alt text-gold mt-1 me-3 fa-lg"></i>
+                            <div>
+                                <strong>Address:</strong><br>
+                                123 Paradise Road, Serenity Bay<br>
+                                Tropical Island, TI 45678
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex">
+                            <i class="fas fa-phone text-gold mt-1 me-3 fa-lg"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                +1 (555) 123-4567<br>
+                                <small class="text-muted">Mon-Fri, 9am - 6pm</small>
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex">
+                            <i class="fas fa-envelope text-gold mt-1 me-3 fa-lg"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                reservations@kingaresorts.com<br>
+                                support@kingaresorts.com
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Map Placeholder -->
+                    <div class="bg-light p-4 text-center text-muted"
+                        style="height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">
+                        <i class="fas fa-map fa-2x me-2"></i> Map Integration
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Activities Section -->
+    <section id="schedule" class="bg-light py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Plan Your Itinerary</h2>
+                <p>Schedule your experiences before you arrive</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-sm p-4">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Activity Type</label>
+                                    <select class="form-select">
+                                        <option>Select Activity</option>
+                                        <option>Spa Treatment</option>
+                                        <option>Private Dinner</option>
+                                        <option>Island Tour</option>
+                                        <option>Water Sports</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Preferred Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Additional Requests</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary-gold">Request Schedule</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img src="image%20assets/logos/white_textlogo_dark_background.png" alt="Kinga Resorts"
+                        class="footer-logo">
+                    <p>Adventure In Comfort,<br>Luxury In Nature.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="accommodations.html">Accommodations</a></li>
+                        <li class="mb-2"><a href="experiences.html">Experiences</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-gold"></i> 123 Paradise Road,
+                            Serenity Bay</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2 text-gold"></i> +1 (555) 123-4567</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2 text-gold"></i> reservations@kingaresorts.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4 border-top border-secondary">
+                <div class="col-12 text-center text-muted small">
+                    <p>&copy; 2025 Kinga Resorts. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
