@@ -50,3 +50,9 @@ auth.json
 # Large Archives (Optional but recommended)
 *.zip
 *.tar.gz
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
