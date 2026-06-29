@@ -111,72 +111,44 @@ export default function Home() {
 
     return (
         <MainLayout>
-            {/* Hero Carousel */}
-            <header 
-                className="hero-carousel position-relative overflow-hidden" 
-                role="banner" 
-                ref={carouselRef}
-                tabIndex="0" 
-                onKeyDown={handleKeyDown}
-                onMouseEnter={stopAutoPlay}
-                onMouseLeave={startAutoPlay}
-                aria-label="Resort showcase carousel"
-                style={{ height: '85vh', outline: 'none' }}
-            >
-                {slides.map((slide, idx) => (
-                    <div 
-                        key={idx}
-                        className={`carousel-slide position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center ${idx === currentSlide ? 'active' : ''}`}
-                        style={{
-                            backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('${slide.image}')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            opacity: idx === currentSlide ? 1 : 0,
-                            visibility: idx === currentSlide ? 'visible' : 'hidden',
-                            transition: 'opacity 1s ease-in-out, visibility 1s ease-in-out',
-                            zIndex: idx === currentSlide ? 1 : 0
-                        }}
-                    >
-                        <div className="container hero-content text-white position-relative z-2">
-                            <h1 className="display-3 fw-bold mb-3 font-serif" style={{ whiteSpace: 'pre-line' }}>{slide.title}</h1>
-                            <p className="lead fs-4 mb-4">{slide.lead}</p>
-                            {slide.btnLink.startsWith('#') ? (
-                                 <a href={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</a>
-                             ) : (
-                                 <Link to={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</Link>
-                             )}
+            <div className="position-relative">
+                {/* Hero Carousel */}
+                <header 
+                    className="hero-carousel position-relative overflow-hidden" 
+                    role="banner" 
+                    ref={carouselRef}
+                    tabIndex="0" 
+                    onKeyDown={handleKeyDown}
+                    onMouseEnter={stopAutoPlay}
+                    onMouseLeave={startAutoPlay}
+                    aria-label="Resort showcase carousel"
+                    style={{ outline: 'none' }}
+                >
+                    {slides.map((slide, idx) => (
+                        <div 
+                            key={idx}
+                            className={`carousel-slide position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center ${idx === currentSlide ? 'active' : ''}`}
+                            style={{
+                                backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('${slide.image}')`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                opacity: idx === currentSlide ? 1 : 0,
+                                visibility: idx === currentSlide ? 'visible' : 'hidden',
+                                transition: 'opacity 1s ease-in-out, visibility 1s ease-in-out',
+                                zIndex: idx === currentSlide ? 1 : 0
+                            }}
+                        >
+                            <div className="container hero-content text-white position-relative z-2">
+                                <h1 className="hero-title fw-bold mb-3 font-serif" style={{ whiteSpace: 'pre-line' }}>{slide.title}</h1>
+                                <p className="lead fs-4 mb-4">{slide.lead}</p>
+                                {slide.btnLink.startsWith('#') ? (
+                                     <a href={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</a>
+                                 ) : (
+                                     <Link to={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</Link>
+                                 )}
+                            </div>
                         </div>
-                    </div>
-                ))}
-
-                {/* Quick Booking Bar */}
-                <div className="position-absolute bottom-0 start-50 translate-middle-x w-100 z-3 px-3" style={{ maxWidth: '1100px', marginBottom: '8vh' }}>
-                    <div className="bg-white p-4 shadow-lg rounded">
-                        <form className="row g-3 align-items-end" onSubmit={handleQuickBook}>
-                            <div className="col-md-3">
-                                <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-IN</label>
-                                <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_in" required />
-                            </div>
-                            <div className="col-md-3">
-                                <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-OUT</label>
-                                <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_out" required />
-                            </div>
-                            <div className="col-md-3">
-                                <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-user me-2 text-gold"></i>GUESTS</label>
-                                <select className="form-select form-select-lg border-0 bg-light" name="guests" defaultValue="2">
-                                    <option value="1">1 Adult</option>
-                                    <option value="2">2 Adults</option>
-                                    <option value="3">3 Adults</option>
-                                    <option value="4">4 Adults</option>
-                                    <option value="5">5+ Adults</option>
-                                </select>
-                            </div>
-                            <div className="col-md-3">
-                                <button type="submit" className="btn btn-primary-gold btn-lg w-100 h-100 py-3">Check Availability</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                    ))}
 
                 {/* Navigation Arrows */}
                 <button 
@@ -222,22 +194,54 @@ export default function Home() {
                 </div>
             </header>
 
+            {/* Quick Booking Bar */}
+            <div className="hero-booking-bar">
+                <div className="bg-white p-4 shadow-lg rounded">
+                    <form className="row g-3 align-items-end" onSubmit={handleQuickBook}>
+                        <div className="col-md-3">
+                            <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-IN</label>
+                            <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_in" required />
+                        </div>
+                        <div className="col-md-3">
+                            <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-OUT</label>
+                            <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_out" required />
+                        </div>
+                        <div className="col-md-3">
+                            <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-user me-2 text-gold"></i>GUESTS</label>
+                            <select className="form-select form-select-lg border-0 bg-light" name="guests" defaultValue="2">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5+ Adults</option>
+                            </select>
+                        </div>
+                        <div className="col-md-3">
+                            <button type="submit" className="btn btn-primary-gold btn-lg w-100 h-100 py-3">Check Availability</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
             {/* Intro Section */}
             <section className="philosophy-section py-5 bg-white" aria-labelledby="philosophy-title" data-aos="fade-up">
-                <div className="row align-items-center">
-                    <div className="col-md-6 mb-4 mb-md-0">
-                        <img 
-                            src="/image assets/hotel rooms/room_blue_velvet_bed.jpg" 
-                            alt="Elegant resort interior with modern furnishings" 
-                            className="img-fluid rounded shadow-sm"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div className="col-md-6 ps-md-5">
-                        <h2 id="intro-heading" className="font-serif display-5 mb-3">A Sanctuary for the Soul</h2>
-                        <p className="text-muted leading-relaxed">Kinga Resorts is a premier hospitality establishment located in Machakos County, approximately 30 minutes from JKIA and 45 minutes from Nairobi CBD. Our property is designed to serve both local and international guests, with a strong focus on delivering exceptional service standards and memorable experiences.</p>
-                        <p className="text-muted leading-relaxed">Offering world-class accommodation, state-of-the-art conferencing, and multi-cuisine dining options, we blend adventure in comfort and luxury in nature. Our property also features robust leisure facilities including secure play areas, safety-netted trampolines, a baby pool, and football fields for family retreats.</p>
-                        <a href="#experiences" className="btn btn-outline-gold mt-3">Discover Experiences</a>
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-6 mb-4 mb-md-0">
+                            <img 
+                                src="/image assets/hotel rooms/room_blue_velvet_bed.jpg" 
+                                alt="Elegant resort interior with modern furnishings" 
+                                className="img-fluid rounded shadow-sm"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className="col-md-6 ps-md-5">
+                            <h2 id="intro-heading" className="font-serif display-5 mb-3">A Sanctuary for the Soul</h2>
+                            <p className="text-muted leading-relaxed">Kinga Resorts is a premier hospitality establishment located in Machakos County, approximately 30 minutes from JKIA and 45 minutes from Nairobi CBD. Our property is designed to serve both local and international guests, with a strong focus on delivering exceptional service standards and memorable experiences.</p>
+                            <p className="text-muted leading-relaxed">Offering world-class accommodation, state-of-the-art conferencing, and multi-cuisine dining options, we blend adventure in comfort and luxury in nature. Our property also features robust leisure facilities including secure play areas, safety-netted trampolines, a baby pool, and football fields for family retreats.</p>
+                            <a href="#experiences" className="btn btn-outline-gold mt-3">Discover Experiences</a>
+                        </div>
                     </div>
                 </div>
             </section>

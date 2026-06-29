@@ -49,7 +49,7 @@ export default function MainLayout({ children }) {
                     paddingTop: isScrolled ? '0.5rem' : '1rem',
                     paddingBottom: isScrolled ? '0.5rem' : '1rem',
                     transition: 'all 0.3s ease',
-                    background: '#8B6508'
+                    background: '#41350e'
                 }}
                 role="navigation" 
                 aria-label="Main navigation"
@@ -60,13 +60,12 @@ export default function MainLayout({ children }) {
                             src="/image assets/logos/k_icon_gold.png" 
                             alt="Kinga Icon" 
                             className="navbar-icon me-2"
-                            style={{ height: '48px', objectFit: 'contain' }}
                         />
                         <div className="d-flex flex-column justify-content-center">
                             <img 
                                 src="/image assets/logos/kinga_script_logo.png" 
                                 alt="Kinga Resorts"
-                                style={{ height: '55px', objectFit: 'contain' }}
+                                className="navbar-logo"
                             />
                             <span className="text-white text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-8px', marginRight: '5px' }}>by OSL</span>
                         </div>

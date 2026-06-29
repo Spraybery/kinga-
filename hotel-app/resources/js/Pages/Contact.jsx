@@ -37,7 +37,7 @@ export default function Contact() {
                 className="hero-section d-flex align-items-center justify-content-center text-white position-relative"
                 style={{
                     height: '50vh',
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/image assets/caurosels and hotel cenaries/atikah-akhtar-stREw6BF8mE-unsplash.jpg')`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/image assets/hotel rooms/resort_exterior_lawn_view.jpg')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}

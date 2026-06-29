@@ -46,7 +46,7 @@ export default function MainLayout({ children }) {
                     paddingTop: isScrolled ? '0.5rem' : '1rem',
                     paddingBottom: isScrolled ? '0.5rem' : '1rem',
                     transition: 'all 0.3s ease',
-                    background: '#8B6508'
+                    background: '#41350e'
                 }}
                 role="navigation" 
                 aria-label="Main navigation"
@@ -57,13 +57,12 @@ export default function MainLayout({ children }) {
                             src="/image assets/logos/k_icon_gold.png" 
                             alt="Kinga Icon" 
                             className="navbar-icon me-2"
-                            style={{ height: '48px', objectFit: 'contain' }}
                         />
                         <div className="d-flex flex-column justify-content-center">
                             <img 
                                 src="/image assets/logos/kinga_script_logo.png" 
                                 alt="Kinga Resorts"
-                                style={{ height: '55px', objectFit: 'contain' }}
+                                className="navbar-logo"
                             />
                             <span className="text-white text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-10px', marginRight: '5px' }}>by OSL</span>
                         </div>
@@ -178,12 +177,12 @@ export default function MainLayout({ children }) {
                         <div className="col-md-4">
                             <h5 className="text-gold mb-3">Quick Links</h5>
                             <ul className="list-unstyled d-flex flex-column gap-2">
-                                <li><Link href="/" className="text-white-50 text-decoration-none hover-gold">Home</Link></li>
-                                <li><Link href="/accommodations" className="text-white-50 text-decoration-none hover-gold">Accommodations</Link></li>
-                                <li><Link href="/dining" className="text-white-50 text-decoration-none hover-gold">Dining</Link></li>
+                                <li><Link to="/" className="text-white-50 text-decoration-none hover-gold">Home</Link></li>
+                                <li><Link to="/accommodations" className="text-white-50 text-decoration-none hover-gold">Accommodations</Link></li>
+                                <li><Link to="/dining" className="text-white-50 text-decoration-none hover-gold">Dining</Link></li>
                                 <li><Link to="/conferences" className="text-white-50 text-decoration-none hover-gold">Conferences & Events</Link></li>
-                                <li><Link href="/gallery" className="text-white-50 text-decoration-none hover-gold">Gallery</Link></li>
-                                <li><Link href="/contact" className="text-white-50 text-decoration-none hover-gold">Contact</Link></li>
+                                <li><Link to="/gallery" className="text-white-50 text-decoration-none hover-gold">Gallery</Link></li>
+                                <li><Link to="/contact" className="text-white-50 text-decoration-none hover-gold">Contact</Link></li>
                             </ul>
                         </div>
                         <div className="col-md-4">

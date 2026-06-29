@@ -985,3 +985,68 @@ select:focus-visible {
     border-color: #ced4da;
     color: var(--primary-gold);
 }
+
+/* ========================================
+   MOBILE & RESPONSIVENESS CUSTOM OVERRIDES
+   ======================================= */
+
+.navbar-logo {
+    height: 55px;
+    object-fit: contain;
+    transition: height 0.3s ease;
+}
+
+.navbar-icon {
+    height: 48px;
+    object-fit: contain;
+    transition: height 0.3s ease;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.hero-booking-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: -50px;
+    z-index: 10;
+    padding: 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 40px;
+    }
+    .navbar-icon {
+        height: 34px;
+    }
+    .hero-title {
+        font-size: 2rem !important;
+        white-space: normal !important;
+    }
+    .hero-booking-bar {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 0 1.5rem;
+    }
+    .hero-carousel {
+        height: auto !important;
+        min-height: 450px !important;
+    }
+    .carousel-slide {
+        height: 100% !important;
+        min-height: 450px !important;
+        padding: 4rem 0 !important;
+    }
+    .hero-content {
+        padding: 2rem 1rem !important;
+    }
+}
