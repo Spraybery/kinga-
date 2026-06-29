@@ -1,7 +1,7 @@
 import React from 'react';
 import MainLayout from '../components/MainLayout';
 
-export default function Experiences() {
+export default function Conferences() {
     return (
         <MainLayout>
             {/* Header */}
@@ -9,14 +9,14 @@ export default function Experiences() {
                 className="hero-section d-flex align-items-center justify-content-center text-white position-relative"
                 style={{
                     height: '50vh',
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/image assets/hotel rooms/resort_exterior_lawn_view.jpg')`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/image assets/hotel rooms/conference_banquet_hall_1.jpg')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}
             >
                 <div className="container hero-content text-center position-relative z-1">
-                    <h1 className="display-4 font-serif text-white">Experiences</h1>
-                    <p className="lead">Curated activities and premium facilities for every event</p>
+                    <h1 className="display-4 font-serif text-white">Conferences & Events</h1>
+                    <p className="lead">Curated venues and professional hosting services for every engagement</p>
                 </div>
             </header>
 

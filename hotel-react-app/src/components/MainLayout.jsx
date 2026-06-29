@@ -37,11 +37,6 @@ export default function MainLayout({ children }) {
 
     return (
         <div className="d-flex flex-column min-vh-100">
-            {/* Direct Booking Incentive Banner */}
-            <div className="incentive-banner" role="banner">
-                <i className="fas fa-gift me-2"></i>
-                <strong>Best Rate Guarantee:</strong> Book direct and save 15% + Free WiFi + Late Checkout
-            </div>
 
             {/* Navigation */}
             <nav 
@@ -51,7 +46,7 @@ export default function MainLayout({ children }) {
                     paddingTop: isScrolled ? '0.5rem' : '1rem',
                     paddingBottom: isScrolled ? '0.5rem' : '1rem',
                     transition: 'all 0.3s ease',
-                    backgroundColor: 'var(--navy-dark, #0c192c)'
+                    background: '#8B6508'
                 }}
                 role="navigation" 
                 aria-label="Main navigation"
@@ -59,18 +54,18 @@ export default function MainLayout({ children }) {
                 <div className="container">
                     <Link className="navbar-brand d-flex align-items-center" to="/">
                         <img 
-                            src="/image assets/logos/color1-white_icon_transparent_background.png" 
+                            src="/image assets/logos/k_icon_gold.png" 
                             alt="Kinga Icon" 
                             className="navbar-icon me-2"
                             style={{ height: '48px', objectFit: 'contain' }}
                         />
                         <div className="d-flex flex-column justify-content-center">
                             <img 
-                                src="/image assets/logos/color1-white_textlogo_transparent_background.png" 
+                                src="/image assets/logos/kinga_script_logo.png" 
                                 alt="Kinga Resorts"
-                                style={{ height: '48px', objectFit: 'contain' }}
+                                style={{ height: '55px', objectFit: 'contain' }}
                             />
-                            <span className="text-gold text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-10px', marginRight: '5px' }}>by OSL</span>
+                            <span className="text-white text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-10px', marginRight: '5px' }}>by OSL</span>
                         </div>
                     </Link>
                     <button 
@@ -113,11 +108,11 @@ export default function MainLayout({ children }) {
                             </li>
                             <li className="nav-item">
                                 <Link 
-                                    className={`nav-link text-white ${isActive('/experiences') ? 'active' : ''}`} 
-                                    to="/experiences"
+                                    className={`nav-link text-white ${isActive('/conferences') ? 'active' : ''}`} 
+                                    to="/conferences"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Experiences
+                                    Conferences & Events
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -163,12 +158,15 @@ export default function MainLayout({ children }) {
                 <div className="container">
                     <div className="row g-4">
                         <div className="col-md-4">
-                            <img 
-                                src="/image assets/logos/white_textlogo_dark_background.png" 
-                                alt="Kinga Resorts" 
-                                className="footer-logo mb-3"
-                                style={{ height: '40px', objectFit: 'contain' }}
-                            />
+                            <div className="d-flex flex-column mb-3" style={{ width: 'fit-content' }}>
+                                <img 
+                                    src="/image assets/logos/kinga_script_logo.png" 
+                                    alt="Kinga Resorts" 
+                                    className="footer-logo"
+                                    style={{ height: '55px', objectFit: 'contain' }}
+                                />
+                                <span className="text-gold text-end w-100" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-8px', marginRight: '5px' }}>by OSL</span>
+                            </div>
                             <p className="small">Adventure in Comfort, Luxury in Nature.</p>
                             <div className="social-icons d-flex gap-3 mt-3">
                                 <a href="#" className="text-white text-decoration-none" aria-label="Facebook"><i className="fab fa-facebook-f hover-gold"></i></a>
@@ -183,7 +181,7 @@ export default function MainLayout({ children }) {
                                 <li><Link href="/" className="text-white-50 text-decoration-none hover-gold">Home</Link></li>
                                 <li><Link href="/accommodations" className="text-white-50 text-decoration-none hover-gold">Accommodations</Link></li>
                                 <li><Link href="/dining" className="text-white-50 text-decoration-none hover-gold">Dining</Link></li>
-                                <li><Link href="/experiences" className="text-white-50 text-decoration-none hover-gold">Experiences</Link></li>
+                                <li><Link to="/conferences" className="text-white-50 text-decoration-none hover-gold">Conferences & Events</Link></li>
                                 <li><Link href="/gallery" className="text-white-50 text-decoration-none hover-gold">Gallery</Link></li>
                                 <li><Link href="/contact" className="text-white-50 text-decoration-none hover-gold">Contact</Link></li>
                             </ul>
@@ -198,21 +196,6 @@ export default function MainLayout({ children }) {
                         </div>
                     </div>
 
-                    {/* Trust Badges */}
-                    <div className="trust-badges d-flex justify-content-center flex-wrap gap-4 mt-5 border-top border-secondary pt-4">
-                        <div className="trust-badge text-white-50 d-flex align-items-center gap-2">
-                            <i className="fas fa-shield-alt text-gold"></i>
-                            <span>Secure Booking</span>
-                        </div>
-                        <div className="trust-badge text-white-50 d-flex align-items-center gap-2">
-                            <i className="fas fa-lock text-gold"></i>
-                            <span>SSL Encrypted</span>
-                        </div>
-                        <div className="trust-badge text-white-50 d-flex align-items-center gap-2">
-                            <i className="fas fa-certificate text-gold"></i>
-                            <span>Exclusive Offers</span>
-                        </div>
-                    </div>
 
                     <div className="row mt-4 pt-3 border-top border-secondary">
                         <div className="col-12 text-center text-white-50 small">

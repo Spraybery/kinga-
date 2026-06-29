@@ -1,9 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import MainLayout from '../Layouts/MainLayout';
 import { route } from 'ziggy-js';
+import { Carousel } from 'bootstrap';
 
 export default function Home({ rooms = [] }) {
+    const handleQuickBook = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const params = Object.fromEntries(formData.entries());
+        router.get(route('bookings.create'), params);
+    };
+
     // Hero Carousel State
     const [currentSlide, setCurrentSlide] = useState(0);
     const carouselRef = useRef(null);
@@ -11,32 +19,32 @@ export default function Home({ rooms = [] }) {
 
     const slides = [
         {
-            image: "/image assets/hotel rooms/resort_courtyard_gardens.jpg",
+            image: "/image assets/hero/hero_1.jpg",
             title: "Adventure In Comfort,\nLuxury In Nature",
             lead: "Experience the ultimate escape in our pristine sanctuary.",
             btnText: "Explore Your Stay",
             btnLink: route('rooms.index')
         },
         {
-            image: "/image assets/hotel rooms/room_deluxe_canopy_bed_angle.jpg",
+            image: "/image assets/hero/hero_bedroom.jpg",
             title: "Unparalleled Elegance",
             lead: "Where modern luxury meets timeless sophistication.",
             btnText: "View Accommodations",
             btnLink: route('rooms.index')
         },
         {
-            image: "/image assets/hotel rooms/conference_banquet_hall_projector_2.jpg",
-            title: "Your Private Paradise",
-            lead: "Discover serenity in our exclusive nature retreat in Machakos County.",
+            image: "/image assets/hero/hero_3.jpg",
+            title: "Host Your Events With Us",
+            lead: "Premium conference and banquet facilities.",
             btnText: "Discover Experiences",
-            btnLink: route('experiences')
+            btnLink: "#experiences"
         },
         {
-            image: "/image assets/hotel rooms/dining_buffet_spread_2.jpg",
-            title: "Culinary Excellence",
-            lead: "Savor world-class cuisine in breathtaking settings.",
+            image: "/image assets/hero/hero_buffet.jpg",
+            title: "Culinary Delights",
+            lead: "Savor exquisite international and local cuisines.",
             btnText: "Explore Dining",
-            btnLink: route('dining')
+            btnLink: "#dining"
         }
     ];
 
@@ -81,6 +89,22 @@ export default function Home({ rooms = [] }) {
         setFaqOpen(prev => ({ ...prev, [idx]: !prev[idx] }));
     };
 
+    // Programmatic initialization of the Philosophy Carousel to ensure auto-scroll in built output
+    useEffect(() => {
+        const carouselEl = document.getElementById('mvvCarousel');
+        if (carouselEl) {
+            const carousel = new Carousel(carouselEl, {
+                interval: 5000,
+                ride: 'carousel',
+                wrap: true
+            });
+            carousel.cycle();
+            return () => {
+                carousel.dispose();
+            };
+        }
+    }, []);
+
     // Default Rooms if none passed from Laravel
     const defaultRooms = [
         {
@@ -88,14 +112,7 @@ export default function Home({ rooms = [] }) {
             name: "Garden Villas",
             description: "Private havens surrounded by lush flora, perfect for couples seeking intimacy.",
             price: 52500,
-            image_path: "image assets/hotel rooms/room_deluxe_canopy_bed_front.jpg"
-        },
-        {
-            id: 2,
-            name: "Ocean Suites",
-            description: "Breathtaking views of the horizon with spacious balconies and premium amenities.",
-            price: 82500,
-            image_path: "image assets/hotel rooms/room_desk_tv_balcony.jpg"
+            image_path: "image assets/hotel rooms/room_blue_velvet_bed.jpg"
         },
         {
             id: 3,
@@ -139,10 +156,43 @@ export default function Home({ rooms = [] }) {
                         <div className="container hero-content text-white position-relative z-2">
                             <h1 className="display-3 fw-bold mb-3 font-serif" style={{ whiteSpace: 'pre-line' }}>{slide.title}</h1>
                             <p className="lead fs-4 mb-4">{slide.lead}</p>
-                            <Link href={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</Link>
+                            {slide.btnLink.startsWith('#') ? (
+                                 <a href={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</a>
+                             ) : (
+                                 <Link href={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</Link>
+                             )}
                         </div>
                     </div>
                 ))}
+
+                {/* Quick Booking Bar */}
+                <div className="position-absolute bottom-0 start-50 translate-middle-x w-100 z-3 px-3" style={{ maxWidth: '1100px', marginBottom: '8vh' }}>
+                    <div className="bg-white p-4 shadow-lg rounded">
+                        <form className="row g-3 align-items-end" onSubmit={handleQuickBook}>
+                            <div className="col-md-3">
+                                <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-IN</label>
+                                <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_in" required />
+                            </div>
+                            <div className="col-md-3">
+                                <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-OUT</label>
+                                <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_out" required />
+                            </div>
+                            <div className="col-md-3">
+                                <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-user me-2 text-gold"></i>GUESTS</label>
+                                <select className="form-select form-select-lg border-0 bg-light" name="guests" defaultValue="2">
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                    <option value="5">5+ Adults</option>
+                                </select>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="submit" className="btn btn-primary-gold btn-lg w-100 h-100 py-3">Check Availability</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 {/* Navigation Arrows */}
                 <button 
@@ -189,21 +239,23 @@ export default function Home({ rooms = [] }) {
             </header>
 
             {/* Intro Section */}
-            <section className="container py-5 my-3" aria-labelledby="intro-heading">
-                <div className="row align-items-center">
-                    <div className="col-md-6 mb-4 mb-md-0">
-                        <img 
-                            src="/image assets/hotel rooms/room_deluxe_canopy_bed_front.jpg" 
-                            alt="Elegant resort interior with modern furnishings" 
-                            className="img-fluid rounded shadow-sm"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div className="col-md-6 ps-md-5">
-                        <h2 id="intro-heading" className="font-serif display-5 mb-3">A Sanctuary for the Soul</h2>
-                        <p className="text-muted leading-relaxed">Kinga Resorts is a premier hospitality establishment located in Machakos County, approximately 30 minutes from JKIA and 45 minutes from Nairobi CBD. Our property is designed to serve both local and international guests, with a strong focus on delivering exceptional service standards and memorable experiences.</p>
-                        <p className="text-muted leading-relaxed">Offering world-class accommodation, state-of-the-art conferencing, and multi-cuisine dining options, we blend adventure in comfort and luxury in nature. Our property also features robust leisure facilities including secure play areas, safety-netted trampolines, a baby pool, and football fields for family retreats.</p>
-                        <Link href={route('experiences')} className="btn btn-outline-gold mt-3">Discover Experiences</Link>
+            <section className="philosophy-section py-5 bg-white" aria-labelledby="intro-heading" data-aos="fade-up">
+                <div className="container py-5 my-3">
+                    <div className="row align-items-center">
+                        <div className="col-md-6 mb-4 mb-md-0">
+                            <img 
+                                src="/image assets/hotel rooms/room_blue_velvet_bed.jpg" 
+                                alt="Elegant resort interior with modern furnishings" 
+                                className="img-fluid rounded shadow-sm"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className="col-md-6 ps-md-5">
+                            <h2 id="intro-heading" className="font-serif display-5 mb-3">A Sanctuary for the Soul</h2>
+                            <p className="text-muted leading-relaxed">Kinga Resorts is a premier hospitality establishment located in Machakos County, approximately 30 minutes from JKIA and 45 minutes from Nairobi CBD. Our property is designed to serve both local and international guests, with a strong focus on delivering exceptional service standards and memorable experiences.</p>
+                            <p className="text-muted leading-relaxed">Offering world-class accommodation, state-of-the-art conferencing, and multi-cuisine dining options, we blend adventure in comfort and luxury in nature. Our property also features robust leisure facilities including secure play areas, safety-netted trampolines, a baby pool, and football fields for family retreats.</p>
+                            <a href="#experiences" className="btn btn-outline-gold mt-3">Discover Experiences</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -292,7 +344,7 @@ export default function Home({ rooms = [] }) {
             </section>
 
             {/* Featured Accommodations */}
-            <section className="bg-light py-5" aria-labelledby="accommodations-heading">
+            <section id="accommodations" className="accommodations-section bg-light py-5" aria-labelledby="accommodations-heading" data-aos="fade-up">
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 id="accommodations-heading" className="font-serif display-5">Accommodations</h2>
@@ -355,6 +407,66 @@ export default function Home({ rooms = [] }) {
                                 <p className="text-muted small mb-0">Lush manicured wedding grounds, cocktail terraces, and exhibition lawns.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Resort Experiences Section */}
+            <section id="experiences" className="experiences-section py-5 bg-white" aria-labelledby="experiences-heading" style={{ scrollMarginTop: '80px' }} data-aos="fade-up">
+                <div className="container py-4">
+                    <div className="text-center mb-5">
+                        <span className="text-gold uppercase tracking-wider text-sm fw-bold">Recreation & Leisure</span>
+                        <h2 id="experiences-heading" className="font-serif display-5 mt-2">Resort Experiences</h2>
+                        <div className="mx-auto mt-3" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
+                        <p className="text-muted max-w-2xl mx-auto mt-3">Immerse yourself in our serene environment with activities designed to relax, rejuvenate, and reconnect with nature.</p>
+                    </div>
+                    <div className="row g-4">
+                        {[
+                            {
+                                title: "Swimming Pools",
+                                image: "/image assets/hotel rooms/resort_swimming_pool.jpg",
+                                desc: "Relax in our crystal-clear main pool or let the kids splash safely in the dedicated, safety-monitored baby pool.",
+                                icon: "fa-swimming-pool"
+                            },
+                            {
+                                title: "Bird Watching",
+                                image: "/image assets/hotel rooms/resort_bird_watching.jpg",
+                                desc: "Discover the vibrant local bird species nesting in our quiet, sun-dappled botanical courtyard gardens.",
+                                icon: "fa-binoculars"
+                            },
+                            {
+                                title: "Jogging & Nature Walk",
+                                image: "/image assets/hotel rooms/resort_jogging_path.jpg",
+                                desc: "Invigorate your mornings with clean country air along our scenic nature trails winding through green canopies.",
+                                icon: "fa-running"
+                            },
+                            {
+                                title: "Bike Riding",
+                                image: "/image assets/hotel rooms/resort_bike_riding.jpg",
+                                desc: "Explore the resort's extensive paths and scenic scenery at your own pace with complimentary leisure bicycles.",
+                                icon: "fa-bicycle"
+                            }
+                        ].map((exp, idx) => (
+                            <div key={idx} className="col-md-6 col-lg-3">
+                                <article className="card card-custom border-0 shadow-sm h-100 overflow-hidden hover-lift" style={{ transition: 'all 0.3s ease' }}>
+                                    <div className="position-relative" style={{ height: '200px', overflow: 'hidden' }}>
+                                        <img 
+                                            src={exp.image} 
+                                            className="card-img-top w-100 h-100 object-fit-cover hover-zoom" 
+                                            alt={exp.title} 
+                                            loading="lazy"
+                                        />
+                                        <div className="position-absolute top-0 start-0 m-3 bg-dark text-gold rounded-circle d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px', backgroundColor: 'rgba(12, 25, 44, 0.85)', border: '1px solid rgba(197, 168, 128, 0.3)' }}>
+                                            <i className={`fas ${exp.icon}`}></i>
+                                        </div>
+                                    </div>
+                                    <div className="card-body p-4 text-center">
+                                        <h3 className="h5 font-serif mb-2">{exp.title}</h3>
+                                        <p className="card-text text-muted small mb-0">{exp.desc}</p>
+                                    </div>
+                                </article>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -549,7 +661,7 @@ export default function Home({ rooms = [] }) {
                                                 <small className="text-muted">4 Days / 3 Nights</small>
                                             </div>
                                             <h3 className="h5 font-serif">Honeymoon Bliss</h3>
-                                            <p className="card-text small text-muted">Ocean suite stay, romantic candlelight dinner on the beach, and couple's massage.</p>
+                                            <p className="card-text small text-muted">Garden villa stay, romantic candlelight dinner on the beach, and couple's massage.</p>
                                             <div className="mt-3">
                                                 <Link href={route('bookings.create', { package: 'honeymoon' })} className="btn btn-sm btn-outline-gold">Book Package</Link>
                                             </div>

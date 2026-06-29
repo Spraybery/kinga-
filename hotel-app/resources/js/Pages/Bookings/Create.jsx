@@ -14,13 +14,6 @@ export default function Create({ rooms = [], selectedRoomId = null }) {
             image_path: "image assets/hotel rooms/gabriel-alenius-lTrbjFd8Iwo-unsplash.jpg"
         },
         {
-            id: 2,
-            name: "Ocean Suites",
-            description: "Wake up to the sound of waves. Our Ocean Suites sit perched on the cliffside, offering uninterrupted views of the azure waters.",
-            price: 82500,
-            image_path: "image assets/hotel rooms/linus-mimietz-p3UWyaujtQo-unsplash.jpg"
-        },
-        {
             id: 3,
             name: "Royal Penthouse",
             description: "The crown jewel of Kinga Resorts. A two-bedroom sanctuary with a massive living area, full kitchen, and private infinity pool.",

@@ -97,7 +97,7 @@ h6,
 }
 
 .nav-link {
-    color: var(--text-charcoal) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 1.05rem;
@@ -781,6 +781,21 @@ select:focus-visible {
 
     .container {
         max-width: 720px;
+    }
+}
+
+/* Laptops (MacBooks, etc. 993px to 1440px) */
+@media (min-width: 993px) and (max-width: 1440px) {
+    .hero-content h1 {
+        font-size: 3.2rem !important;
+    }
+
+    .hero-carousel {
+        height: 75vh !important;
+    }
+
+    .display-5 {
+        font-size: 2.2rem;
     }
 }
 
