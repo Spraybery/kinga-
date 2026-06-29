@@ -4,20 +4,10 @@ export const rooms = [
         name: "Garden Villas",
         description: "Private havens surrounded by lush flora, perfect for couples seeking intimacy. Hidden amongst the vibrant flora of our tropical gardens, these villas offer privacy and tranquility. Feature a private plunge pool and outdoor rain shower.",
         price: 52500,
-        image_path: "image assets/hotel rooms/room_deluxe_canopy_bed_front.jpg",
+        image_path: "image assets/hotel rooms/room_desk_tv_balcony.jpg",
         capacity: 2,
         size: "75 m²",
         features: ["King Size Bed", "High-Speed Wifi", "Outdoor Rain Shower", "Private Plunge Pool"]
-    },
-    {
-        id: 2,
-        name: "Ocean Suites",
-        description: "Breathtaking views of the horizon with spacious balconies and premium amenities. Wake up to the sound of waves. Our Ocean Suites sit perched on the cliffside, offering uninterrupted views of the azure waters. Includes a spacious balcony and outdoor Jacuzzi.",
-        price: 82500,
-        image_path: "image assets/hotel rooms/room_desk_tv_balcony.jpg",
-        capacity: 2,
-        size: "110 m²",
-        features: ["King Size Bed", "Ocean View Balcony", "Jacuzzi Tub", "Espresso Machine"]
     },
     {
         id: 3,

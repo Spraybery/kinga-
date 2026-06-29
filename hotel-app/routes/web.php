@@ -16,9 +16,9 @@ Route::get('/dining', function () {
     return Inertia::render('Dining');
 })->name('dining');
 
-Route::get('/experiences', function () {
-    return Inertia::render('Experiences');
-})->name('experiences');
+Route::get('/conferences', function () {
+    return Inertia::render('Conferences');
+})->name('conferences');
 
 Route::get('/gallery', function () {
     return Inertia::render('Gallery');

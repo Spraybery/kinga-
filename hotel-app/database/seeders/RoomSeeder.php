@@ -17,14 +17,6 @@ class RoomSeeder extends Seeder
             'description' => 'Private havens surrounded by lush flora, perfect for couples seeking intimacy.',
             'price' => 52500,
             'capacity' => 2,
-            'image_path' => 'image assets/hotel rooms/room_deluxe_canopy_bed_front.jpg',
-        ]);
-
-        \App\Models\Room::create([
-            'name' => 'Ocean Suites',
-            'description' => 'Breathtaking views of the horizon with spacious balconies and premium amenities.',
-            'price' => 82500,
-            'capacity' => 2,
             'image_path' => 'image assets/hotel rooms/room_desk_tv_balcony.jpg',
         ]);
 

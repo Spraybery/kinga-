@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, usePage } from '@inertiajs/react';
 import { route } from 'ziggy-js';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export default function MainLayout({ children }) {
     const { url } = usePage();
     const { flash, errors } = usePage().props;
@@ -9,6 +12,8 @@ export default function MainLayout({ children }) {
     // Scroll restoration: reset viewport to top when route changes
     useEffect(() => {
         window.scrollTo(0, 0);
+        AOS.init({ duration: 1000, once: true, offset: 150 });
+        AOS.refresh();
     }, [url]);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -35,11 +40,6 @@ export default function MainLayout({ children }) {
 
     return (
         <div className="d-flex flex-column min-vh-100">
-            {/* Direct Booking Incentive Banner */}
-            <div className="incentive-banner" role="banner">
-                <i className="fas fa-gift me-2"></i>
-                <strong>Best Rate Guarantee:</strong> Book direct and save 15% + Free WiFi + Late Checkout
-            </div>
 
             {/* Navigation */}
             <nav 
@@ -49,7 +49,7 @@ export default function MainLayout({ children }) {
                     paddingTop: isScrolled ? '0.5rem' : '1rem',
                     paddingBottom: isScrolled ? '0.5rem' : '1rem',
                     transition: 'all 0.3s ease',
-                    backgroundColor: 'var(--navy-dark, #0c192c)'
+                    background: '#8B6508'
                 }}
                 role="navigation" 
                 aria-label="Main navigation"
@@ -57,18 +57,18 @@ export default function MainLayout({ children }) {
                 <div className="container">
                     <Link className="navbar-brand d-flex align-items-center" href={route('home')}>
                         <img 
-                            src="/image assets/logos/color1-white_icon_transparent_background.png" 
+                            src="/image assets/logos/k_icon_gold.png" 
                             alt="Kinga Icon" 
                             className="navbar-icon me-2"
-                            style={{ height: '55px', objectFit: 'contain' }}
+                            style={{ height: '48px', objectFit: 'contain' }}
                         />
                         <div className="d-flex flex-column justify-content-center">
                             <img 
-                                src="/image assets/logos/color1-white_textlogo_transparent_background.png" 
+                                src="/image assets/logos/kinga_script_logo.png" 
                                 alt="Kinga Resorts"
-                                style={{ height: '42px', objectFit: 'contain' }}
+                                style={{ height: '55px', objectFit: 'contain' }}
                             />
-                            <span className="text-gold text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-8px', marginRight: '5px' }}>by OSL</span>
+                            <span className="text-white text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-8px', marginRight: '5px' }}>by OSL</span>
                         </div>
                     </Link>
                     <button 
@@ -111,11 +111,11 @@ export default function MainLayout({ children }) {
                             </li>
                             <li className="nav-item">
                                 <Link 
-                                    className={`nav-link text-white ${isActive('experiences') ? 'active' : ''}`} 
-                                    href={route('experiences')}
+                                    className={`nav-link text-white ${isActive('conferences') ? 'active' : ''}`} 
+                                    href={route('conferences')}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Experiences
+                                    Conferences & Events
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -182,12 +182,15 @@ export default function MainLayout({ children }) {
                 <div className="container">
                     <div className="row g-4">
                         <div className="col-md-4">
-                            <img 
-                                src="/image assets/logos/white_textlogo_dark_background.png" 
-                                alt="Kinga Resorts" 
-                                className="footer-logo mb-3"
-                                style={{ height: '40px', objectFit: 'contain' }}
-                            />
+                            <div className="d-flex flex-column mb-3" style={{ width: 'fit-content' }}>
+                                <img 
+                                    src="/image assets/logos/kinga_script_logo.png" 
+                                    alt="Kinga Resorts" 
+                                    className="footer-logo"
+                                    style={{ height: '55px', objectFit: 'contain' }}
+                                />
+                                <span className="text-gold text-end w-100" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-8px', marginRight: '5px' }}>by OSL</span>
+                            </div>
                             <p className="small">Adventure in Comfort, Luxury in Nature.</p>
                             <div className="social-icons d-flex gap-3 mt-3">
                                 <a href="#" className="text-white text-decoration-none" aria-label="Facebook"><i className="fab fa-facebook-f hover-gold"></i></a>
@@ -202,7 +205,7 @@ export default function MainLayout({ children }) {
                                 <li><Link href={route('home')} className="text-white-50 text-decoration-none hover-gold">Home</Link></li>
                                 <li><Link href={route('rooms.index')} className="text-white-50 text-decoration-none hover-gold">Accommodations</Link></li>
                                 <li><Link href={route('dining')} className="text-white-50 text-decoration-none hover-gold">Dining</Link></li>
-                                <li><Link href={route('experiences')} className="text-white-50 text-decoration-none hover-gold">Experiences</Link></li>
+                                <li><Link href={route('conferences')} className="text-white-50 text-decoration-none hover-gold">Conferences & Events</Link></li>
                                 <li><Link href={route('gallery')} className="text-white-50 text-decoration-none hover-gold">Gallery</Link></li>
                                 <li><Link href={route('contact')} className="text-white-50 text-decoration-none hover-gold">Contact</Link></li>
                             </ul>
@@ -217,21 +220,6 @@ export default function MainLayout({ children }) {
                         </div>
                     </div>
 
-                    {/* Trust Badges */}
-                    <div className="trust-badges d-flex justify-content-center flex-wrap gap-4 mt-5 border-top border-secondary pt-4">
-                        <div className="trust-badge text-white-50 d-flex align-items-center gap-2">
-                            <i className="fas fa-shield-alt text-gold"></i>
-                            <span>Secure Booking</span>
-                        </div>
-                        <div className="trust-badge text-white-50 d-flex align-items-center gap-2">
-                            <i className="fas fa-lock text-gold"></i>
-                            <span>SSL Encrypted</span>
-                        </div>
-                        <div className="trust-badge text-white-50 d-flex align-items-center gap-2">
-                            <i className="fas fa-certificate text-gold"></i>
-                            <span>Exclusive Offers</span>
-                        </div>
-                    </div>
 
                     <div className="row mt-4 pt-3 border-top border-secondary">
                         <div className="col-12 text-center text-white-50 small">

@@ -12,7 +12,7 @@ export default function Gallery() {
 
     const images = [
         { src: '/image assets/hotel rooms/resort_courtyard_gardens.jpg', category: 'gardens', alt: 'Resort Courtyard Gardens', col: 'col-md-4 col-sm-6' },
-        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_front.jpg', category: 'rooms', alt: 'Deluxe Canopy Bedroom', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_blue_velvet_bed.jpg', category: 'rooms', alt: 'Deluxe Blue Velvet Bedroom', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_buffet_spread_1.jpg', category: 'dining', alt: 'Deluxe Buffet Service', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_projector_1.jpg', category: 'meetings', alt: 'Main Conference Hall', col: 'col-md-6 col-sm-6' },
         { src: '/image assets/hotel rooms/room_desk_tv_balcony.jpg', category: 'rooms', alt: 'Executive Desk & View', col: 'col-md-6 col-sm-6' },
@@ -22,7 +22,7 @@ export default function Gallery() {
         { src: '/image assets/hotel rooms/room_private_balcony_4.jpg', category: 'rooms', alt: 'Private Balcony Seating', col: 'col-md-6 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_outdoor_catering_event.jpg', category: 'dining', alt: 'Outdoor Garden Catering', col: 'col-md-6 col-sm-6' },
         { src: '/image assets/hotel rooms/resort_exterior_lawn_view.jpg', category: 'gardens', alt: 'Lawn Garden Balcony View', col: 'col-md-4 col-sm-6' },
-        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_angle.jpg', category: 'rooms', alt: 'Canopy Bed Side Angle', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_blue_velvet_bed.jpg', category: 'rooms', alt: 'Blue Velvet Bed Side Angle', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_garden_breakfast.jpg', category: 'dining', alt: 'Outdoor Garden Breakfast', col: 'col-md-4 col-sm-6' }
     ];
 

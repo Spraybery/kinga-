@@ -40,7 +40,7 @@ export default function Dining() {
                             <div className="card-body p-4 text-center">
                                 <h3 className="h4 text-gold mb-3 font-serif">Multi-Cuisine Restaurant</h3>
                                 <p className="text-muted small">Our main dining venue offers a rich selection of international dishes, hot entrees, and freshly prepared local delicacies. Available for buffet service and a-la-carte dining.</p>
-                                <p className="mb-4 small"><strong>Hours:</strong> 6:30 AM - 10:00 PM</p>
+
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ export default function Dining() {
                             <div className="card-body p-4 text-center">
                                 <h3 className="h4 text-gold mb-3 font-serif">Executive Lounge</h3>
                                 <p className="text-muted small">Relax in a sophisticated setting. The lounge offers the perfect ambiance for quiet business discussions or wind-downs, serving premium cocktails, beverages, and light bites.</p>
-                                <p className="mb-4 small"><strong>Hours:</strong> 11:00 AM - 11:00 PM</p>
+
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ export default function Dining() {
                             <div className="card-body p-4 text-center">
                                 <h3 className="h4 text-gold mb-3 font-serif">Al Fresco & Garden Dining</h3>
                                 <p className="text-muted small">Immerse yourself in nature. Savor garden breakfasts, lunches, and themed outdoor catering events set against the scenic, peaceful backdrops of Machakos County.</p>
-                                <p className="mb-4 small"><strong>Hours:</strong> 7:00 AM - 9:00 PM</p>
+
                             </div>
                         </div>
                     </div>
