@@ -139,6 +139,41 @@ export default function Home() {
         }, 3000);
     };
 
+    const showNextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+    };
+
+    const showPrevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    };
+
+    const startAutoPlay = () => {
+        stopAutoPlay();
+        autoPlayRef.current = setInterval(showNextSlide, 5000);
+    };
+
+    const stopAutoPlay = () => {
+        if (autoPlayRef.current) {
+            clearInterval(autoPlayRef.current);
+        }
+    };
+
+    useEffect(() => {
+        startAutoPlay();
+        return () => stopAutoPlay();
+    }, []);
+
+    // Keyboard Navigation for Carousel
+    const handleKeyDown = (e) => {
+        if (e.key === 'ArrowLeft') {
+            showPrevSlide();
+            startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            showNextSlide();
+            startAutoPlay();
+        }
+    };
+
     // FAQ Accordion State
     const [faqOpen, setFaqOpen] = useState({ 0: true, 1: false, 2: false });
     const toggleFaq = (idx) => {
@@ -166,9 +201,91 @@ export default function Home() {
     return (
         <MainLayout>
             <div className="position-relative">
-                {/* Quick Booking Bar */}
-                <div className="container mt-5 mb-5 pt-3">
-                    <div className="bg-white p-4 shadow-lg rounded border border-light">
+                {/* Hero Carousel */}
+                <header 
+                    className="hero-carousel position-relative overflow-hidden" 
+                    role="banner" 
+                    ref={carouselRef}
+                    tabIndex="0" 
+                    onKeyDown={handleKeyDown}
+                    onMouseEnter={stopAutoPlay}
+                    onMouseLeave={startAutoPlay}
+                    aria-label="Resort showcase carousel"
+                    style={{ outline: 'none' }}
+                >
+                    {slides.map((slide, idx) => (
+                        <div 
+                            key={idx}
+                            className={`carousel-slide position-absolute w-100 h-100 top-0 start-0 d-flex align-items-center ${idx === currentSlide ? 'active' : ''}`}
+                            style={{
+                                backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('${slide.image}')`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                opacity: idx === currentSlide ? 1 : 0,
+                                visibility: idx === currentSlide ? 'visible' : 'hidden',
+                                transition: 'opacity 1s ease-in-out, visibility 1s ease-in-out',
+                                zIndex: idx === currentSlide ? 1 : 0
+                            }}
+                        >
+                            <div className="container hero-content text-white position-relative z-2">
+                                <h1 className="hero-title fw-bold mb-3 font-serif" style={{ whiteSpace: 'pre-line' }}>{slide.title}</h1>
+                                <p className="lead fs-4 mb-4">{slide.lead}</p>
+                                {slide.btnLink.startsWith('#') ? (
+                                     <a href={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</a>
+                                 ) : (
+                                     <Link to={slide.btnLink} className="btn btn-primary-gold btn-lg">{slide.btnText}</Link>
+                                 )}
+                            </div>
+                        </div>
+                    ))}
+
+                {/* Navigation Arrows */}
+                <button 
+                    className="carousel-arrow prev position-absolute top-50 start-0 translate-middle-y border-0 bg-transparent text-white px-4 py-3"
+                    onClick={() => { showPrevSlide(); startAutoPlay(); }}
+                    aria-label="Previous slide"
+                    style={{ zIndex: 10, cursor: 'pointer' }}
+                >
+                    <i className="fas fa-chevron-left fa-2x"></i>
+                </button>
+                <button 
+                    className="carousel-arrow next position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-white px-4 py-3"
+                    onClick={() => { showNextSlide(); startAutoPlay(); }}
+                    aria-label="Next slide"
+                    style={{ zIndex: 10, cursor: 'pointer' }}
+                >
+                    <i className="fas fa-chevron-right fa-2x"></i>
+                </button>
+
+                {/* Carousel Indicators */}
+                <div 
+                    className="carousel-indicators position-absolute bottom-0 start-50 translate-middle-x d-flex gap-2 mb-4" 
+                    role="tablist" 
+                    aria-label="Carousel navigation"
+                    style={{ zIndex: 10 }}
+                >
+                    {slides.map((_, idx) => (
+                        <button 
+                            key={idx}
+                            className={`carousel-dot border-0 rounded-circle ${idx === currentSlide ? 'active' : ''}`}
+                            onClick={() => { setCurrentSlide(idx); startAutoPlay(); }}
+                            aria-label={`Go to slide ${idx + 1}`} 
+                            role="tab"
+                            aria-selected={idx === currentSlide}
+                            style={{ 
+                                width: '12px', 
+                                height: '12px', 
+                                backgroundColor: idx === currentSlide ? 'var(--gold, #c5a880)' : 'rgba(255,255,255,0.5)',
+                                transition: 'background-color 0.3s ease'
+                            }}
+                        ></button>
+                    ))}
+                </div>
+            </header>
+
+            {/* Quick Booking Bar */}
+            <div className="hero-booking-bar">
+                <div className="bg-white p-4 shadow-lg rounded">
                     <form className="row g-3 align-items-end" onSubmit={handleQuickBook}>
                         <div className="col-md-3">
                             <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-IN</label>
