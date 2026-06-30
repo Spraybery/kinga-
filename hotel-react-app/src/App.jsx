@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Accommodations from './pages/Accommodations';
-import Dining from './pages/Dining';
-import Conferences from './pages/Conferences';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
+import Rooms from './pages/Rooms';
+import Services from './pages/Services';
 import CreateBooking from './pages/Bookings/Create';
 
 import AOS from 'aos';
@@ -23,11 +20,8 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/accommodations" element={<Accommodations />} />
-                <Route path="/dining" element={<Dining />} />
-                <Route path="/conferences" element={<Conferences />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/rooms" element={<Rooms />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="/bookings/create" element={<CreateBooking />} />
             </Routes>
         </BrowserRouter>

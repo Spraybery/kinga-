@@ -12,21 +12,9 @@ Route::get('/', function () {
 
 Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
 
-Route::get('/dining', function () {
-    return Inertia::render('Dining');
-})->name('dining');
-
-Route::get('/conferences', function () {
-    return Inertia::render('Conferences');
-})->name('conferences');
-
-Route::get('/gallery', function () {
-    return Inertia::render('Gallery');
-})->name('gallery');
-
-Route::get('/contact', function () {
-    return Inertia::render('Contact');
-})->name('contact');
+Route::get('/services', function () {
+    return Inertia::render('Services');
+})->name('services');
 
 Route::resource('bookings', BookingController::class)->only(['create', 'store']);
 Route::get('/api/check-availability', [BookingController::class, 'checkAvailability'])->name('api.check-availability');

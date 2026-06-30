@@ -96,43 +96,16 @@ export default function MainLayout({ children }) {
                                     href={route('rooms.index')}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Accommodations
+                                    Rooms
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link 
-                                    className={`nav-link text-white ${isActive('dining') ? 'active' : ''}`} 
-                                    href={route('dining')}
+                                    className={`nav-link text-white ${isActive('services') ? 'active' : ''}`} 
+                                    href={route('services')}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Dining
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className={`nav-link text-white ${isActive('conferences') ? 'active' : ''}`} 
-                                    href={route('conferences')}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Conferences & Events
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className={`nav-link text-white ${isActive('gallery') ? 'active' : ''}`} 
-                                    href={route('gallery')}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Gallery
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className={`nav-link text-white ${isActive('contact') ? 'active' : ''}`} 
-                                    href={route('contact')}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Contact
+                                    Services
                                 </Link>
                             </li>
                             <li className="nav-item ms-lg-3">
@@ -202,11 +175,8 @@ export default function MainLayout({ children }) {
                             <h5 className="text-gold mb-3">Quick Links</h5>
                             <ul className="list-unstyled d-flex flex-column gap-2">
                                 <li><Link href={route('home')} className="text-white-50 text-decoration-none hover-gold">Home</Link></li>
-                                <li><Link href={route('rooms.index')} className="text-white-50 text-decoration-none hover-gold">Accommodations</Link></li>
-                                <li><Link href={route('dining')} className="text-white-50 text-decoration-none hover-gold">Dining</Link></li>
-                                <li><Link href={route('conferences')} className="text-white-50 text-decoration-none hover-gold">Conferences & Events</Link></li>
-                                <li><Link href={route('gallery')} className="text-white-50 text-decoration-none hover-gold">Gallery</Link></li>
-                                <li><Link href={route('contact')} className="text-white-50 text-decoration-none hover-gold">Contact</Link></li>
+                                <li><Link href={route('rooms.index')} className="text-white-50 text-decoration-none hover-gold">Rooms</Link></li>
+                                <li><Link href={route('services')} className="text-white-50 text-decoration-none hover-gold">Services</Link></li>
                             </ul>
                         </div>
                         <div className="col-md-4">
