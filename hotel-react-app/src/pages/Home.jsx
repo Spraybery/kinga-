@@ -230,8 +230,8 @@ export default function Home() {
                     <div className="row align-items-center">
                         <div className="col-md-6 mb-4 mb-md-0">
                             <img 
-                                src="/image assets/hotel rooms/room_blue_velvet_bed.jpg" 
-                                alt="Elegant resort interior with modern furnishings" 
+                                src="/image assets/hotel rooms/resort_exterior_entrance.jpeg" 
+                                alt="Beautiful Kinga Resorts exterior building and lush green landscaping" 
                                 className="img-fluid rounded shadow-sm"
                                 loading="lazy"
                             />
