@@ -29,7 +29,7 @@ export default function Home({ rooms = [] }) {
             image: "/image assets/hero/hero_bedroom.jpg",
             title: "Unparalleled Elegance",
             lead: "Where modern luxury meets timeless sophistication.",
-            btnText: "View Accommodations",
+            btnText: "View Rooms",
             btnLink: route('rooms.index')
         },
         {
@@ -37,16 +37,105 @@ export default function Home({ rooms = [] }) {
             title: "Host Your Events With Us",
             lead: "Premium conference and banquet facilities.",
             btnText: "Discover Experiences",
-            btnLink: "#experiences"
+            btnLink: route('services')
         },
         {
             image: "/image assets/hero/hero_buffet.jpg",
             title: "Culinary Delights",
             lead: "Savor exquisite international and local cuisines.",
             btnText: "Explore Dining",
-            btnLink: "#dining"
+            btnLink: route('services')
         }
     ];
+
+    // Gallery State & Data
+    const categories = [
+        { id: 'all', label: 'All Showcase' },
+        { id: 'rooms', label: 'Rooms & Balconies' },
+        { id: 'dining', label: 'Dining & Events' },
+        { id: 'meetings', label: 'Conferences & Halls' },
+        { id: 'gardens', label: 'Gardens & Grounds' }
+    ];
+
+    const images = [
+        { src: '/image assets/hotel rooms/resort_exterior_entrance.jpeg', category: 'gardens', alt: 'Resort Entrance Gate', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_exterior_building.jpg', category: 'gardens', alt: 'Resort Exterior Building', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_courtyard_gardens.jpg', category: 'gardens', alt: 'Lush Courtyard Gardens', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_exterior_lawn_view.jpg', category: 'gardens', alt: 'Scenic Garden Lawn', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_bike_riding.jpg', category: 'gardens', alt: 'Scenic Bicycle Trail', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_bird_watching.jpg', category: 'gardens', alt: 'Nature Bird Watching', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_jogging_path.jpg', category: 'gardens', alt: 'Jogging & Walking Path', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/resort_swimming_pool.jpg', category: 'gardens', alt: 'Outdoor Swimming Pool', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/experience_kids_trampoline_1.jpg', category: 'gardens', alt: 'Safety-Netted Trampoline', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/experience_kids_trampoline_2.jpg', category: 'gardens', alt: 'Kids Play Zone Area', col: 'col-md-4 col-sm-6' },
+
+        { src: '/image assets/hotel rooms/room_blue_velvet_bed.jpg', category: 'rooms', alt: 'Deluxe Velvet Bedroom', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_1.jpg', category: 'rooms', alt: 'Luxury Canopy Suite Bed', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_2.jpg', category: 'rooms', alt: 'Canopy Suite Bed Side view', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_angle.jpg', category: 'rooms', alt: 'Premium Bed Design', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_close.jpg', category: 'rooms', alt: 'Deluxe Room Bed Linen', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_details_1.jpg', category: 'rooms', alt: 'Luxury Room Side Table', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_canopy_bed_front.jpg', category: 'rooms', alt: 'Royal Suite Front View', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_double_bed_1.jpg', category: 'rooms', alt: 'Deluxe Double Bedroom', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_double_bed_details_2.jpg', category: 'rooms', alt: 'Deluxe Suite Seating', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_deluxe_double_bed_side.jpg', category: 'rooms', alt: 'Deluxe Suite Side Table', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_desk_tv_balcony.jpg', category: 'rooms', alt: 'Executive Desk & View', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_private_balcony_1.jpg', category: 'rooms', alt: 'Balcony Scenic View', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_private_balcony_2.jpg', category: 'rooms', alt: 'Balcony Lounge Seating', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_private_balcony_3.jpg', category: 'rooms', alt: 'Suite Private Terrace', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/room_private_balcony_4.jpg', category: 'rooms', alt: 'Scenic Balcony Suite', col: 'col-md-4 col-sm-6' },
+
+        { src: '/image assets/hotel rooms/dining_buffet_spread_1.jpg', category: 'dining', alt: 'Buffet Hot Entrees', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/dining_buffet_spread_2.jpg', category: 'dining', alt: 'Buffet Salad Bar Selection', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/dining_gala_dinner_table.jpg', category: 'dining', alt: 'Formal Gala Setting', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/dining_garden_breakfast.jpg', category: 'dining', alt: 'Garden Breakfast Table', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/dining_outdoor_catering_event.jpg', category: 'dining', alt: 'Al Fresco Garden Catering', col: 'col-md-4 col-sm-6' },
+
+        { src: '/image assets/hotel rooms/conference_banquet_hall_1.jpg', category: 'meetings', alt: 'Grand Conference Hall Front', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_banquet_hall_2.jpg', category: 'meetings', alt: 'Banquet Hall Dining Setup', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_banquet_hall_projector_1.jpg', category: 'meetings', alt: 'Main Conference Screen', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_banquet_hall_projector_2.jpg', category: 'meetings', alt: 'Boardroom Presentation Hall', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_1.jpg', category: 'meetings', alt: 'Executive U-Shape Boardroom', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_2.jpg', category: 'meetings', alt: 'Corporate Seminar Setup', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_3.jpg', category: 'meetings', alt: 'Middle Meeting Room', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_4.jpg', category: 'meetings', alt: 'Meeting Room Setup View', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_5.jpg', category: 'meetings', alt: 'U-Shape Seminar Hall', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_6.jpg', category: 'meetings', alt: 'Lecture Seminar Setup', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_7.jpg', category: 'meetings', alt: 'Seminar Room Layout', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/hotel rooms/conference_room_ushape_8.jpg', category: 'meetings', alt: 'Conference Hall U-Shape Table', col: 'col-md-4 col-sm-6' }
+    ];
+
+    const [activeCategory, setActiveCategory] = useState('all');
+
+    const filteredImages = activeCategory === 'all' 
+        ? images 
+        : images.filter(img => img.category === activeCategory);
+
+    // Contact Form State
+    const [contactForm, setContactForm] = useState({ name: '', email: '', subject: 'General Inquiry', message: '' });
+    const [contactSuccess, setContactSuccess] = useState(false);
+    
+    // Itinerary Form State
+    const [itineraryForm, setItineraryForm] = useState({ activity: 'Select Activity', date: '', requests: '' });
+    const [itinerarySuccess, setItinerarySuccess] = useState(false);
+
+    const handleContactSubmit = (e) => {
+        e.preventDefault();
+        setContactSuccess(true);
+        setTimeout(() => {
+            setContactForm({ name: '', email: '', subject: 'General Inquiry', message: '' });
+            setContactSuccess(false);
+        }, 3000);
+    };
+
+    const handleItinerarySubmit = (e) => {
+        e.preventDefault();
+        setItinerarySuccess(true);
+        setTimeout(() => {
+            setItineraryForm({ activity: 'Select Activity', date: '', requests: '' });
+            setItinerarySuccess(false);
+        }, 3000);
+    };
 
     const showNextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -548,6 +637,49 @@ export default function Home({ rooms = [] }) {
                 </div>
             </section>
 
+            {/* Gallery Section */}
+            <section id="gallery" className="py-5" style={{ backgroundColor: '#fcfaf7' }} data-aos="fade-up">
+                <div className="container">
+                    <div className="text-center mb-4">
+                        <span className="text-gold uppercase tracking-wider text-sm fw-bold">Visual Tour</span>
+                        <h2 className="font-serif display-5 mt-2">Resort Gallery</h2>
+                        <div className="mx-auto mt-2" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
+                    </div>
+                    
+                    {/* Category Filter Tabs */}
+                    <div className="d-flex justify-content-center flex-wrap gap-2 mb-4" role="tablist" aria-label="Gallery categories">
+                        {categories.map(cat => (
+                            <button
+                                key={cat.id}
+                                className={`btn btn-sm ${activeCategory === cat.id ? 'btn-primary-gold' : 'btn-outline-gold'}`}
+                                onClick={() => setActiveCategory(cat.id)}
+                                role="tab"
+                                aria-selected={activeCategory === cat.id}
+                            >
+                                {cat.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Gallery Grid */}
+                    <div className="row g-3">
+                        {filteredImages.map((img, idx) => (
+                            <div key={idx} className={img.col} style={{ transition: 'all 0.4s ease' }}>
+                                <div className="overflow-hidden rounded shadow-sm" style={{ height: '240px' }}>
+                                    <img 
+                                        src={img.src} 
+                                        className="img-fluid w-100 h-100 object-fit-cover hover-zoom" 
+                                        alt={img.alt} 
+                                        loading="lazy"
+                                        style={{ transition: 'transform 0.5s ease' }}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Guest Reviews Section */}
             <section className="container py-5 my-3" aria-labelledby="reviews-heading">
                 <div className="text-center mb-5">
@@ -747,6 +879,189 @@ export default function Home({ rooms = [] }) {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Form & Info */}
+            <section id="contact" className="py-5 bg-white border-top" data-aos="fade-up">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <span className="text-gold uppercase tracking-wider text-sm fw-bold">Inquiries</span>
+                        <h2 className="font-serif display-5 mt-2">Contact Us</h2>
+                        <div className="mx-auto mt-2" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
+                    </div>
+                    <div className="row g-5">
+                        <div className="col-md-6">
+                            <h3>Get in Touch</h3>
+                            <p className="text-muted mb-4">Have questions about our rooms, dining, or experiences? Fill out the form below and we will get back to you shortly.</p>
+                            
+                            {contactSuccess && (
+                                <div className="alert alert-success" role="alert">
+                                    <i className="fas fa-check-circle me-2"></i>
+                                    Thank you! Your message has been sent successfully.
+                                </div>
+                            )}
+
+                            <form onSubmit={handleContactSubmit}>
+                                <div className="mb-3">
+                                    <label htmlFor="name" className="form-label small">Name</label>
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        id="name" 
+                                        placeholder="Your Full Name"
+                                        value={contactForm.name}
+                                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label small">Email address</label>
+                                    <input 
+                                        type="email" 
+                                        className="form-control" 
+                                        id="email" 
+                                        placeholder="name@example.com"
+                                        value={contactForm.email}
+                                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="subject" className="form-label small">Subject</label>
+                                    <select 
+                                        className="form-select" 
+                                        id="subject"
+                                        value={contactForm.subject}
+                                        onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
+                                    >
+                                        <option>General Inquiry</option>
+                                        <option>Reservations</option>
+                                        <option>Events & Weddings</option>
+                                        <option>Feedback</option>
+                                    </select>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="message" className="form-label small">Message</label>
+                                    <textarea 
+                                        className="form-control" 
+                                        id="message" 
+                                        rows="4"
+                                        value={contactForm.message}
+                                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button type="submit" className="btn btn-primary-gold">Send Message</button>
+                            </form>
+                        </div>
+
+                        <div className="col-md-6">
+                            <div className="ps-md-4">
+                                <h3>Contact Information</h3>
+                                <ul className="list-unstyled mt-4 text-muted">
+                                    <li className="mb-3 d-flex">
+                                        <i className="fas fa-map-marker-alt text-gold mt-1 me-3 fa-lg"></i>
+                                        <div>
+                                            <strong>Address:</strong><br />
+                                            P.O. Box 1056-90100 Machakos County, Kenya
+                                        </div>
+                                    </li>
+                                    <li className="mb-3 d-flex">
+                                        <i className="fas fa-phone text-gold mt-1 me-3 fa-lg"></i>
+                                        <div>
+                                            <strong>Phone:</strong><br />
+                                            <a href="tel:0719525314" className="text-dark text-decoration-none hover-gold">0719525314</a> / <a href="tel:0719525428" className="text-dark text-decoration-none hover-gold">0719525428</a>
+                                        </div>
+                                    </li>
+                                    <li className="mb-4 d-flex">
+                                        <i className="fas fa-envelope text-gold mt-1 me-3 fa-lg"></i>
+                                        <div>
+                                            <strong>Email:</strong><br />
+                                            <a href="mailto:info@kingaresort.com" className="text-dark text-decoration-none hover-gold">info@kingaresort.com</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                {/* Map */}
+                                <div 
+                                    className="bg-light p-4 text-center text-muted rounded shadow-sm d-flex align-items-center justify-content-center"
+                                    style={{ height: '220px', border: '1px solid #ddd' }}
+                                >
+                                    <div className="d-flex flex-column align-items-center">
+                                        <i className="fas fa-map fa-2x text-gold mb-2"></i>
+                                        <span className="fw-semibold small">Machakos County, Kenya</span>
+                                        <span className="small text-muted" style={{ fontSize: '0.75rem' }}>30 mins from JKIA & 45 mins from Nairobi CBD.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Schedule Activities Section */}
+            <section id="schedule" className="bg-light py-5">
+                <div className="container">
+                    <div className="section-title text-center mb-5" data-aos="fade-up">
+                        <span className="text-gold uppercase tracking-wider text-sm fw-bold">Concierge</span>
+                        <h2 className="font-serif display-5 mt-2">Plan Your Itinerary</h2>
+                        <div className="mx-auto mt-2" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
+                        <p className="text-muted mt-3">Schedule your experiences before you arrive</p>
+                    </div>
+                    <div className="row justify-content-center" data-aos="fade-up">
+                        <div className="col-md-8">
+                            <div className="card border-0 shadow-sm p-4">
+                                {itinerarySuccess && (
+                                    <div className="alert alert-success" role="alert">
+                                        <i className="fas fa-check-circle me-2"></i>
+                                        Thank you! Your itinerary request has been received.
+                                    </div>
+                                )}
+                                <form onSubmit={handleItinerarySubmit}>
+                                    <div className="row g-3">
+                                        <div className="col-md-6">
+                                            <label className="form-label small">Activity Type</label>
+                                            <select 
+                                                className="form-select"
+                                                value={itineraryForm.activity}
+                                                onChange={(e) => setItineraryForm({ ...itineraryForm, activity: e.target.value })}
+                                                required
+                                            >
+                                                <option disabled value="Select Activity">Select Activity</option>
+                                                <option>Conference Hall Booking</option>
+                                                <option>Kids Play Zone / Activities</option>
+                                                <option>Wedding & Outdoor Banquet</option>
+                                                <option>Accommodation Stay</option>
+                                            </select>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <label className="form-label small">Preferred Date</label>
+                                            <input 
+                                                type="date" 
+                                                className="form-control"
+                                                value={itineraryForm.date}
+                                                onChange={(e) => setItineraryForm({ ...itineraryForm, date: e.target.value })}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-12">
+                                            <label className="form-label small">Additional Requests</label>
+                                            <textarea 
+                                                className="form-control" 
+                                                rows="3"
+                                                value={itineraryForm.requests}
+                                                onChange={(e) => setItineraryForm({ ...itineraryForm, requests: e.target.value })}
+                                            ></textarea>
+                                        </div>
+                                        <div className="col-12 text-center">
+                                            <button type="submit" className="btn btn-primary-gold">Request Schedule</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

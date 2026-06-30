@@ -1,7 +1,7 @@
 import React from 'react';
-import MainLayout from '../components/MainLayout';
+import MainLayout from '../Layouts/MainLayout';
 
-export default function Conferences() {
+export default function Services() {
     return (
         <MainLayout>
             {/* Header */}
@@ -15,14 +15,82 @@ export default function Conferences() {
                 }}
             >
                 <div className="container hero-content text-center position-relative z-1">
-                    <h1 className="display-4 font-serif text-white">Conferences & Events</h1>
-                    <p className="lead">Curated venues and professional hosting services for every engagement</p>
+                    <h1 className="display-4 font-serif text-white">Our Services</h1>
+                    <p className="lead">Exceptional dining, meetings, and recreational activities in nature</p>
                 </div>
             </header>
 
-            {/* Activities */}
+            {/* Dining Venues Section */}
             <section className="container py-5">
-                <div className="row g-4">
+                <div className="text-center mb-5" data-aos="fade-up">
+                    <span className="text-gold uppercase tracking-wider text-sm fw-bold">Gastronomy</span>
+                    <h2 className="font-serif display-5 mt-2">Dining & Culinary Journeys</h2>
+                    <div className="mx-auto mt-2" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
+                    <p className="text-muted mt-3">A harmonious blend of international culinary craft and local ingredients</p>
+                </div>
+                <div className="row g-4" data-aos="fade-up">
+                    <div className="col-md-4">
+                        <div className="card border-0 shadow-sm overflow-hidden h-100 card-custom hover-lift" style={{ transition: 'all 0.3s ease' }}>
+                            <div style={{ height: '260px', overflow: 'hidden' }}>
+                                <img 
+                                    src="/image assets/hotel rooms/dining_buffet_spread_1.jpg" 
+                                    className="w-100 h-100 object-fit-cover hover-zoom" 
+                                    alt="Kinga Multi-Cuisine Restaurant" 
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div className="card-body p-4 text-center">
+                                <h3 className="h4 text-gold mb-3 font-serif">Multi-Cuisine Restaurant</h3>
+                                <p className="text-muted small">Our main dining venue offers a rich selection of international dishes, hot entrees, and freshly prepared local delicacies. Available for buffet service and a-la-carte dining.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="card border-0 shadow-sm overflow-hidden h-100 card-custom hover-lift" style={{ transition: 'all 0.3s ease' }}>
+                            <div style={{ height: '260px', overflow: 'hidden' }}>
+                                <img 
+                                    src="/image assets/hotel rooms/dining_gala_dinner_table.jpg" 
+                                    className="w-100 h-100 object-fit-cover hover-zoom" 
+                                    alt="Executive Lounge" 
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div className="card-body p-4 text-center">
+                                <h3 className="h4 text-gold mb-3 font-serif">Executive Lounge</h3>
+                                <p className="text-muted small">Relax in a sophisticated setting. The lounge offers the perfect ambiance for quiet business discussions or wind-downs, serving premium cocktails, beverages, and light bites.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="card border-0 shadow-sm overflow-hidden h-100 card-custom hover-lift" style={{ transition: 'all 0.3s ease' }}>
+                            <div style={{ height: '260px', overflow: 'hidden' }}>
+                                <img 
+                                    src="/image assets/hotel rooms/dining_outdoor_catering_event.jpg" 
+                                    className="w-100 h-100 object-fit-cover hover-zoom" 
+                                    alt="Al Fresco & Garden Dining" 
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div className="card-body p-4 text-center">
+                                <h3 className="h4 text-gold mb-3 font-serif">Al Fresco & Garden Dining</h3>
+                                <p className="text-muted small">Immerse yourself in nature. Savor garden breakfasts, lunches, and themed outdoor catering events set against the scenic, peaceful backdrops of Machakos County.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr className="container opacity-25" />
+
+            {/* Conferences & Events Section */}
+            <section className="container py-5">
+                <div className="text-center mb-5" data-aos="fade-up">
+                    <span className="text-gold uppercase tracking-wider text-sm fw-bold">Gatherings</span>
+                    <h2 className="font-serif display-5 mt-2">Conferences & Event Spaces</h2>
+                    <div className="mx-auto mt-2" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
+                    <p className="text-muted mt-3">Curated venues and professional hosting services for every engagement</p>
+                </div>
+                <div className="row g-4" data-aos="fade-up">
                     <div className="col-md-4">
                         <div className="card card-custom h-100 border-0 shadow-sm overflow-hidden hover-lift" style={{ transition: 'all 0.3s ease' }}>
                             <img 
@@ -72,7 +140,7 @@ export default function Conferences() {
             </section>
 
             {/* Clientele & Past Experience */}
-            <section className="py-5" style={{ backgroundColor: '#fdfbfa', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+            <section className="py-5" style={{ backgroundColor: '#fdfbfa', borderTop: '1px solid rgba(0,0,0,0.05)' }} data-aos="fade-up">
                 <div className="container">
                     <div className="row g-5 align-items-center">
                         <div className="col-lg-6">
@@ -85,7 +153,7 @@ export default function Conferences() {
                                     <div className="p-3 bg-white rounded shadow-sm border-start border-gold border-3">
                                         <i className="fas fa-briefcase text-gold mb-2"></i>
                                         <h6 className="fw-bold mb-1">Corporate Retreats</h6>
-                                        <span className="text-muted small">Local and multinational company conferences.</span>
+                                        <span className="text-muted small">Local and foreign corporate conferences.</span>
                                     </div>
                                 </div>
                                 <div className="col-sm-6">
@@ -130,11 +198,11 @@ export default function Conferences() {
             </section>
 
             {/* Why Partner Section */}
-            <section className="py-5 text-white" style={{ backgroundColor: 'var(--navy-dark, #0c192c)', borderTop: '2px solid var(--gold, #c5a880)' }}>
+            <section className="py-5 text-white" style={{ backgroundColor: 'var(--navy-dark, #0c192c)', borderTop: '2px solid var(--gold, #c5a880)' }} data-aos="fade-up">
                 <div className="container">
                     <div className="text-center mb-5">
                         <span className="text-gold uppercase tracking-wider text-sm fw-bold">Our Value Proposition</span>
-                        <h2 className="font-serif display-5 mt-2 text-white">Why Partner with Kinga Resorts</h2>
+                        <h2 className="font-serif display-5 mt-2 text-white">Why Choose Kinga Resorts</h2>
                         <div className="mx-auto mt-3" style={{ width: '60px', height: '2px', backgroundColor: 'var(--gold, #c5a880)' }}></div>
                     </div>
                     <div className="row g-4">

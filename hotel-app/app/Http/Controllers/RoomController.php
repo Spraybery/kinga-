@@ -9,7 +9,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = \App\Models\Room::all();
-        return inertia('Accommodations', [
+        return inertia('Rooms', [
             'rooms' => $rooms
         ]);
     }

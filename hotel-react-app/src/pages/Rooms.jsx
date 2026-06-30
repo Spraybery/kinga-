@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import MainLayout from '../components/MainLayout';
 import { rooms } from '../data/rooms';
 
-export default function Accommodations() {
+export default function Rooms() {
     return (
         <MainLayout>
             {/* Header */}
@@ -17,7 +17,7 @@ export default function Accommodations() {
                 }}
             >
                 <div className="container hero-content text-center position-relative z-1">
-                    <h1 className="display-4 font-serif text-white">Our Accommodations</h1>
+                    <h1 className="display-4 font-serif text-white">Our Rooms</h1>
                     <p className="lead">Rest in comfort surrounded by nature</p>
                 </div>
             </header>
