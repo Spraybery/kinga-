@@ -104,7 +104,7 @@ export default function Create() {
             <header 
                 className="booking-hero d-flex align-items-center justify-content-center text-white position-relative" 
                 style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/image assets/hotel rooms/dad-hotel-Y-bJWAjPzsY-unsplash.jpg')`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/image assets/hotel rooms/resort_exterior_building.jpg')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     minHeight: '350px'
@@ -133,10 +133,6 @@ export default function Create() {
                                         <div className="col-sm-6"><strong>Guests:</strong> {formData.guest_count} Adults</div>
                                         <div className="col-sm-6"><strong>Duration:</strong> {nights} {nights === 1 ? 'Night' : 'Nights'}</div>
                                         {selectedPackage && <div className="col-sm-12"><strong>Selected Package:</strong> {selectedPackage === 'wellness' ? 'Wellness Retreat Package' : 'Honeymoon Bliss'}</div>}
-                                        <div className="col-12 mt-2 border-top pt-2 d-flex justify-content-between">
-                                            <strong>Total Estimate (with 10% tax):</strong>
-                                            <strong className="text-gold">KES {finance.total.toLocaleString()}</strong>
-                                        </div>
                                     </div>
                                 </div>
                                 <p className="text-muted small mb-4">A confirmation email has been sent to <strong>{formData.email}</strong>. Our guest relations manager will call you at <strong>{formData.phone}</strong> shortly to finalize your custom details.</p>
@@ -340,22 +336,6 @@ export default function Create() {
                                                     {selectedRoom ? selectedRoom.name : 'Select accommodation'}
                                                 </span>
                                             </div>
-                                            {selectedRoom && (
-                                                <div className="border-top pt-2">
-                                                    <div className="d-flex justify-content-between small">
-                                                        <span className="text-muted">Subtotal:</span>
-                                                        <span>KES {finance.subtotal.toLocaleString()}</span>
-                                                    </div>
-                                                    <div className="d-flex justify-content-between small">
-                                                        <span className="text-muted">Taxes (10%):</span>
-                                                        <span>KES {finance.taxes.toLocaleString()}</span>
-                                                    </div>
-                                                    <div className="d-flex justify-content-between fw-bold text-dark mt-1">
-                                                        <span>Total:</span>
-                                                        <span className="text-gold">KES {finance.total.toLocaleString()}</span>
-                                                    </div>
-                                                </div>
-                                            )}
                                         </div>
 
                                         <button 

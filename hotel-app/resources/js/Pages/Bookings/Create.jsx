@@ -106,7 +106,7 @@ export default function Create({ rooms = [], selectedRoomId = null }) {
             <header 
                 className="booking-hero d-flex align-items-center justify-content-center text-white position-relative" 
                 style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/image assets/hotel rooms/dad-hotel-Y-bJWAjPzsY-unsplash.jpg')`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/image assets/hotel rooms/resort_exterior_building.jpg')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     minHeight: '350px'
