@@ -1064,4 +1064,55 @@ select:focus-visible {
     .hero-content {
         padding: 2rem 1rem !important;
     }
+}
+
+/* ========================================
+   ANIMATION & HOVER EFFECTS
+   ======================================= */
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.hover-lift:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.hover-zoom {
+    transition: transform 0.5s ease !important;
+}
+.hover-zoom:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Additional smooth effects */
+.card-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
+}
+
+.service-icon-box {
+    transition: all 0.3s ease;
+}
+.service-icon-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06) !important;
+    border-color: var(--primary-gold) !important;
+}
+
+/* Make all buttons transition smoothly */
+.btn {
+    transition: all 0.3s ease;
+}
+.btn-primary-gold:hover {
+    background-color: var(--primary-gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(224, 179, 58, 0.3);
+}
+.btn-outline-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(224, 179, 58, 0.2);
 }

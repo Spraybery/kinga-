@@ -108,6 +108,7 @@ export default function Home() {
     ];
 
     const [activeCategory, setActiveCategory] = useState('all');
+    const [visibleGalleryCount, setVisibleGalleryCount] = useState(6);
 
     const filteredImages = activeCategory === 'all' 
         ? images 
@@ -636,7 +637,7 @@ export default function Home() {
                             <button
                                 key={cat.id}
                                 className={`btn btn-sm ${activeCategory === cat.id ? 'btn-primary-gold' : 'btn-outline-gold'}`}
-                                onClick={() => setActiveCategory(cat.id)}
+                                onClick={() => { setActiveCategory(cat.id); setVisibleGalleryCount(6); }}
                                 role="tab"
                                 aria-selected={activeCategory === cat.id}
                             >
@@ -647,7 +648,7 @@ export default function Home() {
 
                     {/* Gallery Grid */}
                     <div className="row g-3">
-                        {filteredImages.map((img, idx) => (
+                        {filteredImages.slice(0, visibleGalleryCount).map((img, idx) => (
                             <div key={idx} className={img.col} style={{ transition: 'all 0.4s ease' }}>
                                 <div className="overflow-hidden rounded shadow-sm" style={{ height: '240px' }}>
                                     <img 
@@ -661,6 +662,18 @@ export default function Home() {
                             </div>
                         ))}
                     </div>
+
+                    {/* View More Button */}
+                    {visibleGalleryCount < filteredImages.length && (
+                        <div className="text-center mt-5">
+                            <button 
+                                className="btn btn-outline-gold px-4 py-2 hover-lift" 
+                                onClick={() => setVisibleGalleryCount(prev => prev + 6)}
+                            >
+                                View More Images <i className="fas fa-chevron-down ms-2"></i>
+                            </button>
+                        </div>
+                    )}
                 </div>
             </section>
 
