@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import MainLayout from '../components/MainLayout';
 import { rooms } from '../data/rooms';
 import { Carousel } from 'bootstrap';
@@ -21,6 +22,13 @@ export default function Home() {
 
     const slides = [
         {
+            image: "/image assets/hero/hero_intro.jpg",
+            title: "Lush Pathways To\nSerene Paradise",
+            lead: "Experience the perfect harmony of nature's beauty and premium comfort.",
+            btnText: "Explore Our Grounds",
+            btnLink: "/services"
+        },
+        {
             image: "/image assets/hero/hero_1.jpg",
             title: "Adventure In Comfort,\nLuxury In Nature",
             lead: "Experience the ultimate escape in our pristine sanctuary.",
@@ -35,9 +43,9 @@ export default function Home() {
             btnLink: "/rooms"
         },
         {
-            image: "/image assets/hero/hero_3.jpg",
+            image: "/image assets/hero/hero_events.jpg",
             title: "Host Your Events With Us",
-            lead: "Premium conference and banquet facilities.",
+            lead: "Premium conference and banquet facilities for every occasion.",
             btnText: "Discover Experiences",
             btnLink: "/services"
         },
@@ -60,6 +68,10 @@ export default function Home() {
     ];
 
     const images = [
+        { src: '/image assets/gallery/gardens_tent_view.jpg', category: 'gardens', alt: 'Resort Tents & Gardens', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/gardens_kids_play.jpg', category: 'gardens', alt: 'Children Play Park & Swings', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/gardens_lawn_scenic.jpg', category: 'gardens', alt: 'Beautiful Scenic Resort Lawn', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/gardens_glamping_entrance.jpg', category: 'gardens', alt: 'Glamping Site Arch Gate', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/resort_exterior_entrance.jpeg', category: 'gardens', alt: 'Resort Entrance Gate', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/resort_exterior_building.jpg', category: 'gardens', alt: 'Resort Exterior Building', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/resort_courtyard_gardens.jpg', category: 'gardens', alt: 'Lush Courtyard Gardens', col: 'col-md-4 col-sm-6' },
@@ -87,12 +99,15 @@ export default function Home() {
         { src: '/image assets/hotel rooms/room_private_balcony_3.jpg', category: 'rooms', alt: 'Suite Private Terrace', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/room_private_balcony_4.jpg', category: 'rooms', alt: 'Scenic Balcony Suite', col: 'col-md-4 col-sm-6' },
 
+        { src: '/image assets/gallery/dining_bar_area.jpg', category: 'dining', alt: 'Kinga Lounge Bar Area', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/dining_bar_counter.jpg', category: 'dining', alt: 'Lounge Bar Drinks Counter', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_buffet_spread_1.jpg', category: 'dining', alt: 'Buffet Hot Entrees', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_buffet_spread_2.jpg', category: 'dining', alt: 'Buffet Salad Bar Selection', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_gala_dinner_table.jpg', category: 'dining', alt: 'Formal Gala Setting', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_garden_breakfast.jpg', category: 'dining', alt: 'Garden Breakfast Table', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_outdoor_catering_event.jpg', category: 'dining', alt: 'Al Fresco Garden Catering', col: 'col-md-4 col-sm-6' },
 
+        { src: '/image assets/gallery/meetings_empty_hall.jpg', category: 'meetings', alt: 'Luxury Event Meeting Hall', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_1.jpg', category: 'meetings', alt: 'Grand Conference Hall Front', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_2.jpg', category: 'meetings', alt: 'Banquet Hall Dining Setup', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_projector_1.jpg', category: 'meetings', alt: 'Main Conference Screen', col: 'col-md-4 col-sm-6' },
@@ -201,6 +216,10 @@ export default function Home() {
 
     return (
         <MainLayout>
+            <Helmet>
+                <title>Kinga Resorts | Luxury Glamping & Rooms</title>
+                <meta name="description" content="Discover serenity at Kinga Resorts, the ultimate luxury nature retreat and glamping experience in Machakos County." />
+            </Helmet>
             <div className="position-relative">
                 {/* Hero Carousel */}
                 <header 
@@ -499,10 +518,10 @@ export default function Home() {
                     <div className="row g-4">
                         {[
                             {
-                                title: "Swimming Pools",
-                                image: "/image assets/hotel rooms/resort_swimming_pool.jpg",
-                                desc: "Relax in our crystal-clear main pool or let the kids splash safely in the dedicated, safety-monitored baby pool.",
-                                icon: "fa-swimming-pool"
+                                title: "Kids Play Park",
+                                image: "/image assets/gallery/gardens_kids_play.jpg",
+                                desc: "A safe, fun-filled outdoor park featuring swings, slides, and a safety-netted trampoline for our youngest guests.",
+                                icon: "fa-child"
                             },
                             {
                                 title: "Bird Watching",

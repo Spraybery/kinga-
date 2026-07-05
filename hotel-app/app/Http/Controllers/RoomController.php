@@ -13,4 +13,12 @@ class RoomController extends Controller
             'rooms' => $rooms
         ]);
     }
+
+    public function show($slug)
+    {
+        $room = \App\Models\Room::where('slug', $slug)->firstOrFail();
+        return inertia('RoomDetail', [
+            'room' => $room
+        ]);
+    }
 }

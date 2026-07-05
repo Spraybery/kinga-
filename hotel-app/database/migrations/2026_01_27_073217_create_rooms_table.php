@@ -14,11 +14,16 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique()->nullable();
+            $table->string('tagline')->nullable();
             $table->text('description');
+            $table->text('long_description')->nullable();
             $table->decimal('price', 10, 2);
+            $table->string('price_from')->nullable();
             $table->integer('capacity');
             $table->string('size')->nullable();
             $table->string('image_path')->nullable();
+            $table->json('gallery_images')->nullable();
             $table->timestamps();
         });
     }

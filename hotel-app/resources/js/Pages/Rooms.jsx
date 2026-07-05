@@ -1,136 +1,84 @@
-import React from 'react';
-import { Link } from '@inertiajs/react';
-import MainLayout from '../Layouts/MainLayout';
-import { route } from 'ziggy-js';
+import React, { useState } from "react";
+import { Link, Head } from "@inertiajs/react";
+import MainLayout from "../Layouts/MainLayout";
+import { route } from "ziggy-js";
 
 export default function Rooms({ rooms = [] }) {
-    // Fallback data if DB has no rooms yet
+    const [hoveredId, setHoveredId] = useState(null);
+
     const defaultRooms = [
-        {
-            id: 1,
-            name: "Garden Villas",
-            description: "Private havens surrounded by lush flora, perfect for couples seeking intimacy. Hidden amongst the vibrant flora of our tropical gardens, these villas offer privacy and tranquility. Feature a private plunge pool and outdoor rain shower.",
-            image_path: "image assets/hotel rooms/room_desk_tv_balcony.jpg",
-            capacity: 2,
-            size: "75 m²",
-            features: ["King Size Bed", "High-Speed Wifi", "Outdoor Rain Shower", "Private Plunge Pool"]
-        },
-        {
-            id: 2,
-            name: "Deluxe Canopy Suite",
-            description: "Elegant suites featuring a signature four-poster canopy bed, high ceilings, and beautiful mahogany furnishings. Perfect for romantic getaways, offering a serene, private environment with panoramic garden views.",
-            image_path: "image assets/hotel rooms/room_deluxe_canopy_bed_1.jpg",
-            capacity: 2,
-            size: "90 m²",
-            features: ["Four-Poster Canopy Bed", "En-suite Luxury Bath", "Private Balcony", "Smart TV & Sound System"]
-        },
-        {
-            id: 3,
-            name: "Royal Penthouse",
-            description: "The pinnacle of luxury with panoramic views, private pool, and butler service. The crown jewel of Kinga Resorts. A two-bedroom sanctuary with a massive living area, full kitchen, and private infinity pool overlooking the entire resort.",
-            image_path: "image assets/hotel rooms/resort_exterior_building.jpg",
-            capacity: 4,
-            size: "240 m²",
-            features: ["Sleeps up to 6", "Private Infinity Pool", "24/7 Butler Service", "Full Chef Kitchen"]
-        },
-        {
-            id: 4,
-            name: "Blue Velvet Suite",
-            description: "A beautifully styled room featuring rich blue velvet upholstery, contemporary art pieces, and a plush layout. Offers a private balcony terrace, workspace, and a marble bath with premium amenities.",
-            image_path: "image assets/hotel rooms/room_blue_velvet_bed.jpg",
-            capacity: 2,
-            size: "80 m²",
-            features: ["King Bed with Velvet Linens", "Private Terrace Seating", "Workspace Desk", "Walk-in Rain Shower"]
-        },
-        {
-            id: 5,
-            name: "Deluxe Double Room",
-            description: "Spacious rooms designed for families or small groups traveling together. Features two comfortable double beds, a cozy seating area, and sliding glass doors that open to a scenic view of the property.",
-            image_path: "image assets/hotel rooms/room_deluxe_double_bed_1.jpg",
-            capacity: 4,
-            size: "110 m²",
-            features: ["Two Double Beds", "Spacious Family Layout", "Sliding Balcony Doors", "Complimentary High-speed Wi-Fi"]
-        }
+        { id: 1, slug: "standard", name: "Standard Room", tagline: "Peaceful Simplicity, Modern Comfort", description: "Comfortable, modern rooms with a plush bed, crisp white linens, and an en-suite bathroom.", image_path: "image assets/hotel rooms/standard/20260703_104819.jpg", gallery_images: ["image assets/hotel rooms/standard/20260703_104933.jpg"], capacity: 2, size: "35 m²", price_from: "From KES 8,500 / night", features: ["Queen Size Bed", "En-suite Bathroom", "Flat-screen Smart TV", "Free Wi-Fi"] },
+        { id: 2, slug: "deluxe", name: "Deluxe Room", tagline: "Elevated Luxury, Timeless Elegance", description: "Spacious rooms featuring a canopy mosquito net, elegant wood finishes, and a vanity mirror.", image_path: "image assets/hotel rooms/deluxe/20260703_105926.jpg", gallery_images: ["image assets/hotel rooms/deluxe/20260703_105936.jpg"], capacity: 2, size: "50 m²", price_from: "From KES 14,000 / night", features: ["King Size Bed", "Canopy Mosquito Net", "Private Balcony", "Smart TV"] },
+        { id: 3, slug: "glamping-tent", name: "Glamping Tent", tagline: "Nature's Embrace, Glamour's Touch", description: "Experience nature without sacrificing comfort along a scenic paved path.", image_path: "image assets/hotel rooms/tents/20260703_105344.jpg", gallery_images: ["image assets/hotel rooms/tents/20260703_105418.jpg"], capacity: 2, size: "25 m²", price_from: "From KES 10,000 / night", features: ["Comfortable Beds", "Nature Setting", "Paved Walkways", "Ambient Lighting"] },
     ];
 
     const listRooms = rooms.length > 0 ? rooms : defaultRooms;
 
     return (
         <MainLayout>
-            {/* Header */}
-            <header 
-                className="hero-section d-flex align-items-center justify-content-center text-white position-relative"
-                style={{
-                    height: '50vh',
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/image assets/hotel rooms/resort_courtyard_gardens.jpg')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                }}
-            >
-                <div className="container hero-content text-center position-relative z-1">
-                    <h1 className="display-4 font-serif text-white">Our Rooms</h1>
-                    <p className="lead">Rest in comfort surrounded by nature</p>
+            <Head>
+                <title>Rooms & Glamping Tents | Kinga Resorts</title>
+                <meta name="description" content="Explore our luxurious rooms and glamping tents. Three distinct experiences crafted for the ultimate comfort and nature discovery." />
+            </Head>
+            <header className="d-flex align-items-center justify-content-center text-white position-relative" style={{ minHeight: "55vh", backgroundImage: `linear-gradient(to bottom, rgba(10,8,5,0.55) 0%, rgba(30,20,5,0.75) 100%), url("/image assets/hotel rooms/standard/20260703_104819.jpg")`, backgroundSize: "cover", backgroundPosition: "center top" }}>
+                <div className="container text-center position-relative z-1" style={{ paddingTop: "80px" }}>
+                    <p className="text-uppercase mb-3" style={{ color: "#c9a84c", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.12em" }}>KINGA RESORTS</p>
+                    <h1 className="display-3 font-serif text-white mb-4" style={{ fontWeight: 300, lineHeight: 1.2 }}>Choose Your<br /><em style={{ fontStyle: "italic", color: "#e8c97a" }}>Perfect Retreat</em></h1>
+                    <p className="lead mb-0" style={{ color: "rgba(255,255,255,0.8)", maxWidth: "500px", margin: "0 auto", fontSize: "1.1rem" }}>Three distinct experiences, each crafted to deliver the ultimate in rest and discovery.</p>
                 </div>
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "80px", background: "linear-gradient(to bottom, transparent, #faf9f7)" }} />
             </header>
 
-            {/* Room List */}
-            <section className="container py-5">
-                {listRooms.map((room, index) => {
-                    const isEven = index % 2 === 0;
-                    const resolvedImg = room.image_path.startsWith('http') ? room.image_path : `/${room.image_path}`;
-                    
-                    return (
-                        <div key={room.id}>
-                            <div className={`row mb-5 align-items-center ${!isEven ? 'flex-md-row-reverse' : ''}`}>
-                                <div className="col-md-6">
-                                    <div className="overflow-hidden rounded shadow-sm">
-                                        <img 
-                                            src={resolvedImg} 
-                                            alt={room.name} 
-                                            className="img-fluid w-100 object-fit-cover hover-zoom" 
-                                            style={{ height: '380px', transition: 'transform 0.5s ease' }}
-                                            loading="lazy"
-                                        />
+            <section style={{ background: "#faf9f7", padding: "80px 0 100px" }}>
+                <div className="container">
+                    <div className="row g-4 justify-content-center">
+                        {listRooms.map((room, index) => {
+                            const isHovered = hoveredId === room.id;
+                            const resolvedImg = room.image_path && room.image_path.startsWith("http") ? room.image_path : `/${room.image_path}`;
+                            const galleryCount = (room.gallery_images?.length || 0) + 1;
+
+                            return (
+                                <div key={room.id} className="col-12 col-md-4" onMouseEnter={() => setHoveredId(room.id)} onMouseLeave={() => setHoveredId(null)} data-aos="fade-up" data-aos-delay={index * 120}>
+                                    <div style={{ borderRadius: "16px", overflow: "hidden", background: "#fff", boxShadow: isHovered ? "0 24px 60px rgba(65,53,14,0.22)" : "0 8px 32px rgba(65,53,14,0.10)", transform: isHovered ? "translateY(-10px)" : "translateY(0)", transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", display: "flex", flexDirection: "column", height: "100%" }}>
+                                        <div style={{ position: "relative", height: "300px", overflow: "hidden" }}>
+                                            <img src={resolvedImg} alt={room.name} style={{ width: "100%", height: "100%", objectFit: "cover", transform: isHovered ? "scale(1.07)" : "scale(1)", transition: "transform 0.6s ease" }} />
+                                            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,8,5,0.65) 0%, transparent 55%)" }} />
+                                            <div style={{ position: "absolute", bottom: "16px", left: "16px", color: "#fff", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.04em", textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>{room.price_from}</div>
+                                            <div style={{ position: "absolute", top: "14px", right: "14px", background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)", color: "#fff", borderRadius: "20px", padding: "4px 12px", fontSize: "0.75rem", fontWeight: 500 }}>
+                                                <i className="fas fa-images me-1" />{galleryCount} photos
+                                            </div>
+                                        </div>
+
+                                        <div style={{ padding: "28px 28px 32px", flex: 1, display: "flex", flexDirection: "column" }}>
+                                            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "8px" }}>{room.tagline}</p>
+                                            <h2 className="font-serif" style={{ fontSize: "1.6rem", fontWeight: 400, marginBottom: "12px", color: "#1a1208" }}>{room.name}</h2>
+                                            <p style={{ color: "#6b5c3e", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: "20px", flex: 1 }}>{room.description}</p>
+                                            <div className="d-flex gap-3" style={{ marginBottom: "20px" }}>
+                                                <span style={{ fontSize: "0.8rem", color: "#888", display: "flex", alignItems: "center", gap: "5px" }}><i className="fas fa-ruler-combined" style={{ color: "#c9a84c" }} /> {room.size}</span>
+                                                <span style={{ fontSize: "0.8rem", color: "#888", display: "flex", alignItems: "center", gap: "5px" }}><i className="fas fa-user-friends" style={{ color: "#c9a84c" }} /> {room.capacity} guests</span>
+                                            </div>
+                                            <div className="d-flex flex-wrap gap-2 mb-4">
+                                                {(room.features || []).slice(0, 3).map((feat, fIdx) => (
+                                                    <span key={fIdx} style={{ background: "#fdf5e8", color: "#7a5c1e", borderRadius: "20px", padding: "4px 12px", fontSize: "0.75rem", fontWeight: 500, border: "1px solid #edd99a" }}>{feat}</span>
+                                                ))}
+                                            </div>
+                                            <div className="d-flex gap-2">
+                                                <Link href={route("rooms.show", { slug: room.slug })} style={{ flex: 1, padding: "11px 0", background: isHovered ? "#41350e" : "#c9a84c", color: "#fff", borderRadius: "8px", textAlign: "center", textDecoration: "none", fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.04em", transition: "background 0.3s ease" }}>View Room</Link>
+                                                <Link href={route("bookings.create", { room_id: room.id })} style={{ flex: 1, padding: "11px 0", background: "transparent", color: "#41350e", border: "1.5px solid #c9a84c", borderRadius: "8px", textAlign: "center", textDecoration: "none", fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.04em", transition: "all 0.3s ease" }}>Book Now</Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className={`col-md-6 mt-4 mt-md-0 ${isEven ? 'ps-md-5' : 'pe-md-5 text-md-end'}`}>
-                                    <h2 className="font-serif display-6 mb-3">{room.name}</h2>
-                                    <p className="text-muted mb-4">{room.description}</p>
-                                    
-                                    <ul className={`list-unstyled mb-4 d-flex flex-column gap-2 ${!isEven ? 'align-items-md-end' : ''}`}>
-                                        {room.features ? (
-                                            room.features.map((feat, fIdx) => (
-                                                <li key={fIdx} className="small text-muted">
-                                                    {isEven ? <i className="fas fa-check text-gold me-2"></i> : null}
-                                                    {feat}
-                                                    {!isEven ? <i className="fas fa-check text-gold ms-2"></i> : null}
-                                                </li>
-                                            ))
-                                        ) : (
-                                            <>
-                                                <li className="small text-muted">
-                                                    {isEven ? <i className="fas fa-bed text-gold me-2"></i> : null}
-                                                    King Size Bed
-                                                    {!isEven ? <i className="fas fa-bed text-gold ms-2"></i> : null}
-                                                </li>
-                                                <li className="small text-muted">
-                                                    {isEven ? <i className="fas fa-users text-gold me-2"></i> : null}
-                                                    Capacity: {room.capacity} Guests
-                                                    {!isEven ? <i className="fas fa-users text-gold ms-2"></i> : null}
-                                                </li>
-                                            </>
-                                        )}
-                                    </ul>
-                                    
-                                    <Link href={route('bookings.create', { room_id: room.id })} className="btn btn-primary-gold mt-3">
-                                        Book This Accommodation
-                                    </Link>
-                                </div>
-                            </div>
-                            {index < listRooms.length - 1 && <hr className="my-5 opacity-25" />}
-                        </div>
-                    );
-                })}
+                            );
+                        })}
+                    </div>
+                    <div className="text-center mt-5" data-aos="fade-up">
+                        <p style={{ color: "#9a8060", fontSize: "0.9rem" }}>
+                            <i className="fas fa-concierge-bell me-2" style={{ color: "#c9a84c" }} />
+                            All rooms include complimentary breakfast, 24/7 concierge, and access to resort facilities.
+                        </p>
+                    </div>
+                </div>
             </section>
         </MainLayout>
     );
