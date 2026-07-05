@@ -64,7 +64,7 @@ export default function MainLayout({ children }) {
                                 alt="Kinga Resorts"
                                 className="navbar-logo"
                             />
-                            <span className="text-white text-end" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-10px', marginRight: '5px' }}>by OSL</span>
+                            <span className="text-end" style={{ fontSize: '0.9rem', fontFamily: "'Allura', cursive", color: '#e8c97a', marginTop: '-14px', marginRight: '5px' }}>by Osl</span>
                         </div>
                     </Link>
                     <button 
@@ -137,7 +137,7 @@ export default function MainLayout({ children }) {
                                     className="footer-logo"
                                     style={{ height: '55px', objectFit: 'contain' }}
                                 />
-                                <span className="text-gold text-end w-100" style={{ fontSize: '0.65rem', letterSpacing: '1px', marginTop: '-8px', marginRight: '5px' }}>by OSL</span>
+                                <span className="text-end w-100" style={{ fontSize: '0.9rem', fontFamily: "'Allura', cursive", color: '#e8c97a', marginTop: '-12px', marginRight: '5px' }}>by Osl</span>
                             </div>
                             <p className="small">Adventure in Comfort, Luxury in Nature.</p>
                             <div className="social-icons d-flex gap-3 mt-3">

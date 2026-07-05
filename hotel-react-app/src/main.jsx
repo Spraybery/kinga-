@@ -5,8 +5,12 @@ import 'bootstrap'
 import './index.css'
 import App from './App.jsx'
 
+import { HelmetProvider } from 'react-helmet-async'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </StrictMode>,
 )

@@ -11,6 +11,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
+Route::get('/rooms/{slug}', [RoomController::class, 'show'])->name('rooms.show');
 
 Route::get('/services', function () {
     return Inertia::render('Services');

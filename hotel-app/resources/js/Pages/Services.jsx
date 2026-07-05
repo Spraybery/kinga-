@@ -1,9 +1,14 @@
 import React from 'react';
+import { Head } from '@inertiajs/react';
 import MainLayout from '../Layouts/MainLayout';
 
 export default function Services() {
     return (
         <MainLayout>
+            <Head>
+                <title>Dining, Events & Services | Kinga Resorts</title>
+                <meta name="description" content="Discover exceptional dining venues, state-of-the-art conference halls, and nature recreation at Kinga Resorts." />
+            </Head>
             {/* Header */}
             <header 
                 className="hero-section d-flex align-items-center justify-content-center text-white position-relative"
@@ -182,8 +187,8 @@ export default function Services() {
                         <div className="col-lg-6">
                             <div className="position-relative">
                                 <img 
-                                    src="/image assets/hotel rooms/resort_exterior_lawn_view.jpg" 
-                                    alt="Resort Grounds" 
+                                    src="/image assets/services/clientele.jpg" 
+                                    alt="Resort Entrance" 
                                     className="img-fluid rounded shadow" 
                                     loading="lazy"
                                 />

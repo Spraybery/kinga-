@@ -11,10 +11,19 @@ class Room extends Model
 
     protected $fillable = [
         'name',
+        'slug',
+        'tagline',
         'description',
+        'long_description',
         'price',
+        'price_from',
         'capacity',
         'size',
         'image_path',
+        'gallery_images',
+    ];
+
+    protected $casts = [
+        'gallery_images' => 'array',
     ];
 }

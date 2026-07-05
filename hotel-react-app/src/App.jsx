@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
+import RoomDetail from './pages/RoomDetail';
 import Services from './pages/Services';
 import CreateBooking from './pages/Bookings/Create';
 
@@ -21,6 +22,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/rooms" element={<Rooms />} />
+                <Route path="/rooms/:slug" element={<RoomDetail />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/bookings/create" element={<CreateBooking />} />
             </Routes>

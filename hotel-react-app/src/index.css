@@ -4,7 +4,7 @@
  */
 
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
     /* Color Palette */
@@ -1041,9 +1041,10 @@ select:focus-visible {
     .navbar-icon {
         height: 34px;
     }
-    .hero-title {
-        font-size: 2rem !important;
+    .hero-title, .display-1, .display-2, .display-3, .display-4 {
+        font-size: 2.2rem !important;
         white-space: normal !important;
+        line-height: 1.2 !important;
     }
     .hero-booking-bar {
         position: static;
@@ -1054,15 +1055,30 @@ select:focus-visible {
     }
     .hero-carousel {
         height: auto !important;
-        min-height: 450px !important;
+        min-height: 100svh !important;
     }
     .carousel-slide {
         height: 100% !important;
-        min-height: 450px !important;
+        min-height: 100svh !important;
         padding: 4rem 0 !important;
     }
     .hero-content {
         padding: 2rem 1rem !important;
+    }
+    /* Accessible Touch Targets */
+    .navbar-toggler {
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .nav-link {
+        padding: 12px 0 !important;
+    }
+    .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

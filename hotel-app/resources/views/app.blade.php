@@ -4,8 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Kinga Resorts - Adventure in Comfort, Luxury in Nature. Discover serenity in our exclusive nature retreat in Machakos County.">
+    <meta name="keywords" content="Kinga Resorts, Luxury Resort Machakos, Glamping Kenya, Machakos Hotel, Resort in Machakos, Tented Camp">
+    <meta property="og:title" content="Kinga Resorts">
+    <meta property="og:description" content="Adventure in Comfort, Luxury in Nature. Discover serenity in our exclusive nature retreat in Machakos County.">
+    <meta property="og:image" content="/image assets/logos/kinga_script_logo.png">
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#c5a880">
-    <title>Kinga Resorts</title>
+    <title inertia>Kinga Resorts</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/image assets/logos/color1-white_icon_transparent_background.png">
     <!-- Preconnect -->
