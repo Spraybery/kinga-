@@ -26,7 +26,7 @@ export default function Rooms({ rooms = [] }) {
                     <h1 className="display-3 font-serif text-white mb-4" style={{ fontWeight: 300, lineHeight: 1.2 }}>Choose Your<br /><em style={{ fontStyle: "italic", color: "#e8c97a" }}>Perfect Retreat</em></h1>
                     <p className="lead mb-0" style={{ color: "rgba(255,255,255,0.8)", maxWidth: "500px", margin: "0 auto", fontSize: "1.1rem" }}>Three distinct experiences, each crafted to deliver the ultimate in rest and discovery.</p>
                 </div>
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "80px", background: "linear-gradient(to bottom, transparent, #faf9f7)" }} />
+
             </header>
 
             <section style={{ background: "#faf9f7", padding: "80px 0 100px" }}>
@@ -38,7 +38,7 @@ export default function Rooms({ rooms = [] }) {
                             const galleryCount = (room.gallery_images?.length || 0) + 1;
 
                             return (
-                                <div key={room.id} className="col-12 col-md-4" onMouseEnter={() => setHoveredId(room.id)} onMouseLeave={() => setHoveredId(null)} data-aos="fade-up" data-aos-delay={index * 120}>
+                                <div key={room.id} className="col-12 col-md-4" onMouseEnter={() => setHoveredId(room.id)} onMouseLeave={() => setHoveredId(null)}>
                                     <div style={{ borderRadius: "16px", overflow: "hidden", background: "#fff", boxShadow: isHovered ? "0 24px 60px rgba(65,53,14,0.22)" : "0 8px 32px rgba(65,53,14,0.10)", transform: isHovered ? "translateY(-10px)" : "translateY(0)", transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", display: "flex", flexDirection: "column", height: "100%" }}>
                                         <div style={{ position: "relative", height: "300px", overflow: "hidden" }}>
                                             <img src={resolvedImg} alt={room.name} style={{ width: "100%", height: "100%", objectFit: "cover", transform: isHovered ? "scale(1.07)" : "scale(1)", transition: "transform 0.6s ease" }} />
@@ -64,7 +64,7 @@ export default function Rooms({ rooms = [] }) {
                                             </div>
                                             <div className="d-flex gap-2">
                                                 <Link href={route("rooms.show", { slug: room.slug })} style={{ flex: 1, padding: "11px 0", background: isHovered ? "#41350e" : "#c9a84c", color: "#fff", borderRadius: "8px", textAlign: "center", textDecoration: "none", fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.04em", transition: "background 0.3s ease" }}>View Room</Link>
-                                                <Link href={route("bookings.create", { room_id: room.id })} style={{ flex: 1, padding: "11px 0", background: "transparent", color: "#41350e", border: "1.5px solid #c9a84c", borderRadius: "8px", textAlign: "center", textDecoration: "none", fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.04em", transition: "all 0.3s ease" }}>Book Now</Link>
+                                                <a href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" target="_blank" rel="noopener noreferrer" style={{ flex: 1, padding: "11px 0", background: "transparent", color: "#41350e", border: "1.5px solid #c9a84c", borderRadius: "8px", textAlign: "center", textDecoration: "none", fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.04em", transition: "all 0.3s ease" }}>Book Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@ export default function Rooms({ rooms = [] }) {
                             );
                         })}
                     </div>
-                    <div className="text-center mt-5" data-aos="fade-up">
+                    <div className="text-center mt-5">
                         <p style={{ color: "#9a8060", fontSize: "0.9rem" }}>
                             <i className="fas fa-concierge-bell me-2" style={{ color: "#c9a84c" }} />
                             All rooms include complimentary breakfast, 24/7 concierge, and access to resort facilities.

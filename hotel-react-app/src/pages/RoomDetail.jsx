@@ -224,8 +224,10 @@ export default function RoomDetail() {
                                     Reserve your stay at Kinga Resorts and begin an experience crafted just for you. Our team is available 24/7 to make your time here perfect.
                                 </p>
 
-                                <Link
-                                    to={`/bookings/create?room_id=${room.id}`}
+                                <a
+                                    href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     style={{
                                         display: "block",
                                         width: "100%",
@@ -244,7 +246,11 @@ export default function RoomDetail() {
                                     }}
                                 >
                                     Book This Room
-                                </Link>
+                                </a>
+
+                                <p style={{ color: "#6b5c3e", fontSize: "0.8rem", textAlign: "center", marginTop: "8px", marginBottom: "16px" }}>
+                                    <i className="fas fa-shield-alt text-gold me-1"></i> Bookings and payments securely handled by OSL Travels.
+                                </p>
 
                                 <Link
                                     to="/rooms"

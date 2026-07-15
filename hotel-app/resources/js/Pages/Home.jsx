@@ -66,6 +66,7 @@ export default function Home({ rooms = [] }) {
 
     const images = [
         { src: '/image assets/gallery/gardens_tent_view.jpg', category: 'gardens', alt: 'Resort Tents & Gardens', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/event_garden_arch_entrance.jpg', category: 'gardens', alt: 'Event Garden Arch Entrance', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/gallery/gardens_kids_play.jpg', category: 'gardens', alt: 'Children Play Park & Swings', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/gallery/gardens_lawn_scenic.jpg', category: 'gardens', alt: 'Beautiful Scenic Resort Lawn', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/gallery/gardens_glamping_entrance.jpg', category: 'gardens', alt: 'Glamping Site Arch Gate', col: 'col-md-4 col-sm-6' },
@@ -97,6 +98,7 @@ export default function Home({ rooms = [] }) {
         { src: '/image assets/hotel rooms/room_private_balcony_4.jpg', category: 'rooms', alt: 'Scenic Balcony Suite', col: 'col-md-4 col-sm-6' },
 
         { src: '/image assets/gallery/dining_bar_area.jpg', category: 'dining', alt: 'Kinga Lounge Bar Area', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/event_tent_interior_yellow.jpg', category: 'dining', alt: 'Event Tent Dining Setup', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/gallery/dining_bar_counter.jpg', category: 'dining', alt: 'Lounge Bar Drinks Counter', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_buffet_spread_1.jpg', category: 'dining', alt: 'Buffet Hot Entrees', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/dining_buffet_spread_2.jpg', category: 'dining', alt: 'Buffet Salad Bar Selection', col: 'col-md-4 col-sm-6' },
@@ -105,6 +107,8 @@ export default function Home({ rooms = [] }) {
         { src: '/image assets/hotel rooms/dining_outdoor_catering_event.jpg', category: 'dining', alt: 'Al Fresco Garden Catering', col: 'col-md-4 col-sm-6' },
 
         { src: '/image assets/gallery/meetings_empty_hall.jpg', category: 'meetings', alt: 'Luxury Event Meeting Hall', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/event_wedding_lawn.jpg', category: 'meetings', alt: 'Wedding Ceremony Lawn Setup', col: 'col-md-4 col-sm-6' },
+        { src: '/image assets/gallery/event_banquet_tent_gold.jpg', category: 'meetings', alt: 'Banquet Event Tent Setup', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_1.jpg', category: 'meetings', alt: 'Grand Conference Hall Front', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_2.jpg', category: 'meetings', alt: 'Banquet Hall Dining Setup', col: 'col-md-4 col-sm-6' },
         { src: '/image assets/hotel rooms/conference_banquet_hall_projector_1.jpg', category: 'meetings', alt: 'Main Conference Screen', col: 'col-md-4 col-sm-6' },
@@ -320,30 +324,19 @@ export default function Home({ rooms = [] }) {
 
             {/* Quick Booking Bar */}
             <div className="hero-booking-bar">
-                <div className="bg-white p-4 shadow-lg rounded">
-                    <form className="row g-3 align-items-end" onSubmit={handleQuickBook}>
-                        <div className="col-md-3">
-                            <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-IN</label>
-                            <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_in" required />
-                        </div>
-                        <div className="col-md-3">
-                            <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-calendar-alt me-2 text-gold"></i>CHECK-OUT</label>
-                            <input type="date" className="form-control form-control-lg border-0 bg-light" name="check_out" required />
-                        </div>
-                        <div className="col-md-3">
-                            <label className="form-label small fw-bold text-muted mb-1"><i className="far fa-user me-2 text-gold"></i>GUESTS</label>
-                            <select className="form-select form-select-lg border-0 bg-light" name="guests" defaultValue="2">
-                                <option value="1">1 Adult</option>
-                                <option value="2">2 Adults</option>
-                                <option value="3">3 Adults</option>
-                                <option value="4">4 Adults</option>
-                                <option value="5">5+ Adults</option>
-                            </select>
-                        </div>
-                        <div className="col-md-3">
-                            <button type="submit" className="btn btn-primary-gold btn-lg w-100 h-100 py-3">Check Availability</button>
-                        </div>
-                    </form>
+                <div className="bg-white p-4 shadow-lg rounded text-center">
+                    <p className="mb-3 fw-bold text-muted" style={{ fontSize: '1.1rem' }}>
+                        <i className="fas fa-shield-alt text-gold me-2"></i>
+                        Bookings and secure payments are handled by our certified partner, OSL Travels.
+                    </p>
+                    <a 
+                        href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="btn btn-primary-gold btn-lg px-5 py-3"
+                    >
+                        Book with OSL Travels
+                    </a>
                 </div>
             </div>
         </div>
@@ -475,7 +468,7 @@ export default function Home({ rooms = [] }) {
                                     <div className="card-body text-center p-4">
                                         <h3 className="card-title h5 font-serif">{room.name}</h3>
                                         <p className="card-text text-muted small">{room.description}</p>
-                                        <Link href={route('bookings.create', { room_id: room.id })} className="btn btn-outline-gold btn-sm mt-3">Book This Room</Link>
+                                        <a href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" target="_blank" rel="noopener noreferrer" className="btn btn-outline-gold btn-sm mt-3">Book This Room</a>
                                     </div>
                                 </article>
                             </div>
@@ -801,7 +794,7 @@ export default function Home({ rooms = [] }) {
                                             <h3 className="h5 font-serif">Wellness Retreat Package</h3>
                                             <p className="card-text small text-muted">Includes daily spa treatments, yoga sessions, and healthy organic meals.</p>
                                             <div className="mt-3">
-                                                <Link href={route('bookings.create', { package: 'wellness' })} className="btn btn-sm btn-outline-gold">Book Package</Link>
+                                                <a href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-gold">Book Package</a>
                                             </div>
                                         </div>
                                     </div>
@@ -828,7 +821,7 @@ export default function Home({ rooms = [] }) {
                                             <h3 className="h5 font-serif">Honeymoon Bliss</h3>
                                             <p className="card-text small text-muted">Garden villa stay, romantic candlelight dinner on the beach, and couple's massage.</p>
                                             <div className="mt-3">
-                                                <Link href={route('bookings.create', { package: 'honeymoon' })} className="btn btn-sm btn-outline-gold">Book Package</Link>
+                                                <a href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-gold">Book Package</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1005,14 +998,14 @@ export default function Home({ rooms = [] }) {
                                         <i className="fas fa-phone text-gold mt-1 me-3 fa-lg"></i>
                                         <div>
                                             <strong>Phone:</strong><br />
-                                            <a href="tel:0719525314" className="text-dark text-decoration-none hover-gold">0719525314</a> / <a href="tel:0719525428" className="text-dark text-decoration-none hover-gold">0719525428</a>
+                                            <a href="tel:0719525314" className="text-dark text-decoration-none hover-gold">0719525314</a> / <a href="tel:0797437447" className="text-dark text-decoration-none hover-gold">0797437447</a>
                                         </div>
                                     </li>
                                     <li className="mb-4 d-flex">
                                         <i className="fas fa-envelope text-gold mt-1 me-3 fa-lg"></i>
                                         <div>
                                             <strong>Email:</strong><br />
-                                            <a href="mailto:info@kingaresort.com" className="text-dark text-decoration-none hover-gold">info@kingaresort.com</a>
+                                            <a href="mailto:info@kingaresorts.com" className="text-dark text-decoration-none hover-gold">info@kingaresorts.com</a>
                                         </div>
                                     </li>
                                 </ul>
