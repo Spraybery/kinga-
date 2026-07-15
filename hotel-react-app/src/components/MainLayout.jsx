@@ -106,14 +106,16 @@ export default function MainLayout({ children }) {
                                 </Link>
                             </li>
                             <li className="nav-item ms-lg-3">
-                                <Link 
-                                    to="/bookings/create" 
+                                <a 
+                                    href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="btn btn-primary-gold"
                                     onClick={() => setIsMenuOpen(false)}
-                                    aria-label="Book your stay now"
+                                    aria-label="Book your stay securely with OSL Travels"
                                 >
                                     Book Now
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -159,8 +161,8 @@ export default function MainLayout({ children }) {
                             <h5 className="text-gold mb-3">Contact Us</h5>
                             <ul className="list-unstyled text-white-50 d-flex flex-column gap-2">
                                 <li><i className="fas fa-map-marker-alt me-2 text-gold"></i> P.O. Box 1056-90100 Machakos County, Kenya</li>
-                                <li><i className="fas fa-phone me-2 text-gold"></i> <a href="tel:0719525314" className="text-white-50 text-decoration-none hover-gold">0719525314</a> / <a href="tel:0719525428" className="text-white-50 text-decoration-none hover-gold">0719525428</a></li>
-                                <li><i className="fas fa-envelope me-2 text-gold"></i> <a href="mailto:info@kingaresort.com" className="text-white-50 text-decoration-none hover-gold">info@kingaresort.com</a></li>
+                                <li><i className="fas fa-phone me-2 text-gold"></i> <a href="tel:0719525314" className="text-white-50 text-decoration-none hover-gold">0719525314</a> / <a href="tel:0797437447" className="text-white-50 text-decoration-none hover-gold">0797437447</a></li>
+                                <li><i className="fas fa-envelope me-2 text-gold"></i> <a href="mailto:info@kingaresorts.com" className="text-white-50 text-decoration-none hover-gold">info@kingaresorts.com</a></li>
                             </ul>
                         </div>
                     </div>

@@ -34,10 +34,6 @@ export default function Rooms() {
                         Three distinct experiences, each crafted to deliver the ultimate in rest and discovery.
                     </p>
                 </div>
-                <div style={{
-                    position: "absolute", bottom: 0, left: 0, right: 0, height: "80px",
-                    background: "linear-gradient(to bottom, transparent, #faf9f7)"
-                }} />
             </header>
 
             <section style={{ background: "#faf9f7", padding: "80px 0 100px" }}>
@@ -53,8 +49,6 @@ export default function Rooms() {
                                     className="col-12 col-md-4"
                                     onMouseEnter={() => setHoveredId(room.id)}
                                     onMouseLeave={() => setHoveredId(null)}
-                                    data-aos="fade-up"
-                                    data-aos-delay={index * 120}
                                 >
                                     <div
                                         style={{
@@ -170,8 +164,10 @@ export default function Rooms() {
                                                 >
                                                     View Room
                                                 </Link>
-                                                <Link
-                                                    to={`/bookings/create?room_id=${room.id}`}
+                                                <a
+                                                    href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     style={{
                                                         flex: 1,
                                                         padding: "11px 0",
@@ -188,7 +184,7 @@ export default function Rooms() {
                                                     }}
                                                 >
                                                     Book Now
-                                                </Link>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -197,7 +193,7 @@ export default function Rooms() {
                         })}
                     </div>
 
-                    <div className="text-center mt-5" data-aos="fade-up">
+                    <div className="text-center mt-5">
                         <p style={{ color: "#9a8060", fontSize: "0.9rem" }}>
                             <i className="fas fa-concierge-bell me-2" style={{ color: "#c9a84c" }} />
                             All rooms include complimentary breakfast, 24/7 concierge, and access to resort facilities.

@@ -129,7 +129,7 @@ export default function Services() {
                     <div className="col-md-4">
                         <div className="card card-custom h-100 border-0 shadow-sm overflow-hidden hover-lift" style={{ transition: 'all 0.3s ease' }}>
                             <img 
-                                src="/image assets/hotel rooms/dining_outdoor_catering_event.jpg" 
+                                src="/image assets/gallery/event_wedding_lawn.jpg" 
                                 className="card-img-top object-fit-cover hover-zoom" 
                                 style={{ height: '250px' }}
                                 alt="Banquets & Weddings" 
