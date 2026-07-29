@@ -55,19 +55,19 @@ export default function MainLayout({ children }) {
                 aria-label="Main navigation"
             >
                 <div className="container">
-                    <Link className="navbar-brand d-flex align-items-center" href={route('home')}>
-                        <img 
-                            src="/image assets/logos/k_icon_gold.png" 
-                            alt="Kinga Icon" 
-                            className="navbar-icon me-2"
-                        />
-                        <div className="d-flex flex-column justify-content-center">
+                    <Link className="navbar-brand d-flex align-items-center text-decoration-none py-1" href={route('home')}>
+                        <div className="navbar-logo-container">
                             <img 
-                                src="/image assets/logos/kinga_script_logo.png" 
-                                alt="Kinga Resorts"
-                                className="navbar-logo"
+                                src="/image assets/logos/k_icon_gold.png" 
+                                alt="Kinga Icon" 
                             />
-                            <span className="text-end" style={{ fontSize: '0.9rem', fontFamily: "'Allura', cursive", color: '#e8c97a', marginTop: '-12px', marginRight: '5px' }}>by Osl</span>
+                        </div>
+                        <div className="d-flex flex-column justify-content-center">
+                            <div className="d-flex flex-column">
+                                <span className="navbar-brand-title">KINGA RESORTS</span>
+                                <span className="navbar-brand-subbrand text-end" style={{ marginTop: '-4px', marginBottom: '2px', marginRight: '2px' }}>by Osl</span>
+                            </div>
+                            <span className="navbar-brand-subtitle">Adventure in Comfort, Luxury in Nature</span>
                         </div>
                     </Link>
                     <button 
