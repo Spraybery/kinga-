@@ -55,7 +55,7 @@
     color: #c69c43;
     font-family: 'Playfair Display', 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: 0.72rem;
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 1.2;
@@ -63,15 +63,11 @@
 }
 
 .navbar-logo-container {
-    width: 48px;
-    height: 48px;
-    border: 1px solid rgba(198, 156, 67, 0.4);
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+    height: 54px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3px;
     margin-right: 14px;
     flex-shrink: 0;
 }
@@ -95,8 +91,7 @@
         font-size: 0.78rem;
     }
     .navbar-logo-container {
-        width: 38px;
-        height: 38px;
+        height: 42px;
         margin-right: 8px;
     }
 }

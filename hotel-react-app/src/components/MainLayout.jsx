@@ -40,84 +40,103 @@ export default function MainLayout({ children }) {
 
             {/* Navigation */}
             <nav 
-                className={`navbar navbar-expand-lg sticky-top ${isScrolled ? 'navbar-scrolled' : ''}`} 
+                className={`navbar navbar-expand-lg sticky-top p-0 ${isScrolled ? 'navbar-scrolled' : ''}`} 
                 style={{
-                    boxShadow: isScrolled ? '0 2px 20px rgba(0,0,0,0.1)' : '0 2px 10px rgba(0,0,0,0.05)',
-                    paddingTop: isScrolled ? '0.5rem' : '1rem',
-                    paddingBottom: isScrolled ? '0.5rem' : '1rem',
+                    boxShadow: isScrolled ? '0 4px 20px rgba(0,0,0,0.2)' : '0 2px 10px rgba(0,0,0,0.1)',
                     transition: 'all 0.3s ease',
-                    background: '#41350e'
+                    background: '#231c0a'
                 }}
                 role="navigation" 
                 aria-label="Main navigation"
             >
-                <div className="container">
-                    <Link className="navbar-brand d-flex align-items-center text-decoration-none py-1" to="/">
-                        <div className="navbar-logo-container">
-                            <img 
-                                src="/image assets/logos/k_icon_gold.png" 
-                                alt="Kinga Icon" 
-                            />
-                        </div>
-                        <div className="d-flex flex-column justify-content-center">
-                            <div className="d-flex flex-column">
-                                <span className="navbar-brand-title">KINGA RESORTS</span>
-                                <span className="navbar-brand-subbrand text-end" style={{ marginTop: '-4px', marginBottom: '2px', marginRight: '2px' }}>by Osl</span>
+                <div className="w-100">
+                    {/* Top Main Navbar Content */}
+                    <div className="container py-2 d-flex align-items-center justify-content-between">
+                        <Link className="navbar-brand d-flex align-items-center text-decoration-none py-1 m-0" to="/">
+                            <div className="navbar-logo-container me-3">
+                                <img 
+                                    src="/image assets/logos/full_logo_1.png" 
+                                    alt="Kinga Resorts Logo" 
+                                    style={{ height: '54px', width: 'auto', objectFit: 'contain' }}
+                                />
                             </div>
-                            <span className="navbar-brand-subtitle">Adventure in Comfort, Luxury in Nature</span>
+                            <div className="d-flex flex-column justify-content-center align-items-center text-center">
+                                <span className="navbar-brand-title" style={{ fontFamily: '"Playfair Display", serif', fontSize: '1.75rem', fontWeight: '700', color: '#ffffff', letterSpacing: '1.5px', lineHeight: '1.1', display: 'block', textAlign: 'center' }}>KINGA RESORTS</span>
+                                <span className="navbar-brand-subtitle" style={{ fontFamily: '"Playfair Display", serif', fontStyle: 'italic', color: '#c69c43', fontSize: '0.72rem', marginTop: '2px', display: 'block', textAlign: 'center', width: '100%' }}>Adventure in Comfort, Luxury in Nature</span>
+                            </div>
+                        </Link>
+                        
+                        <button 
+                            className="navbar-toggler border-0 text-white" 
+                            type="button" 
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-expanded={isMenuOpen}
+                            aria-label="Toggle navigation"
+                        >
+                            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} fa-lg`}></i>
+                        </button>
+                        <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
+                            <ul className="navbar-nav ms-auto align-items-center gap-2">
+                                <li className="nav-item">
+                                    <Link 
+                                        className={`nav-link text-white ${isActive('/') ? 'active' : ''}`} 
+                                        to="/"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link 
+                                        className={`nav-link text-white ${isActive('/rooms') ? 'active' : ''}`} 
+                                        to="/rooms"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        Rooms
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link 
+                                        className={`nav-link text-white ${isActive('/services') ? 'active' : ''}`} 
+                                        to="/services"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        Services
+                                    </Link>
+                                </li>
+                                <li className="nav-item ms-lg-3">
+                                    <a 
+                                        href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-primary-gold"
+                                        onClick={() => setIsMenuOpen(false)}
+                                        aria-label="Book your stay securely with OSL Travels"
+                                    >
+                                        Book Now
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </Link>
-                    <button 
-                        className="navbar-toggler border-0 text-white" 
-                        type="button" 
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-expanded={isMenuOpen}
-                        aria-label="Toggle navigation"
-                    >
-                        <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} fa-lg`}></i>
-                    </button>
-                    <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-                        <ul className="navbar-nav ms-auto align-items-center gap-2">
-                            <li className="nav-item">
-                                <Link 
-                                    className={`nav-link text-white ${isActive('/') ? 'active' : ''}`} 
-                                    to="/"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className={`nav-link text-white ${isActive('/rooms') ? 'active' : ''}`} 
-                                    to="/rooms"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Rooms
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className={`nav-link text-white ${isActive('/services') ? 'active' : ''}`} 
-                                    to="/services"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Services
-                                </Link>
-                            </li>
-                            <li className="nav-item ms-lg-3">
-                                <a 
-                                    href="https://osltravels.co.ke/property/hotel/8?name=KINGA%20RESORTS&price=%2460%20%2F%20KES%207%2C800" 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-primary-gold"
-                                    onClick={() => setIsMenuOpen(false)}
-                                    aria-label="Book your stay securely with OSL Travels"
-                                >
-                                    Book Now
-                                </a>
-                            </li>
-                        </ul>
+                    </div>
+
+                    {/* Gold Divider Line */}
+                    <div style={{ height: '2px', backgroundColor: '#c69c43', width: '100%' }}></div>
+
+                    {/* Sub-bar: Managed by OSL Travel */}
+                    <div style={{ backgroundColor: '#181307', padding: '5px 0' }}>
+                        <div className="container">
+                            <span style={{ 
+                                color: '#a09888', 
+                                fontSize: '0.68rem', 
+                                fontWeight: '600', 
+                                letterSpacing: '2.5px', 
+                                textTransform: 'uppercase',
+                                display: 'block'
+                            }}>
+                                A PROPERTY MANAGED BY ONE SOLID LINK
+                            </span>
+                        </div>
                     </div>
                 </div>
             </nav>
