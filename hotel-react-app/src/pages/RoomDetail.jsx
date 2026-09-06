@@ -39,13 +39,13 @@ export default function RoomDetail() {
   "@type": "HotelRoom",
   "name": room.name,
   "description": room.description,
-  "url": \`https://kingaresorts.com/rooms/\${room.slug}\`,
-  "image": \`https://kingaresorts.com/\${room.image_path}\`,
+  "url": "https://kingaresorts.com/rooms/" + room.slug,
+  "image": "https://kingaresorts.com/" + room.image_path,
   "occupancy": {
     "@type": "QuantitativeValue",
     "value": room.capacity
   },
-  "amenityFeature": room.features.map(f => ({
+  "amenityFeature": (room.features || []).map(f => ({
     "@type": "LocationFeatureSpecification",
     "name": f,
     "value": true
