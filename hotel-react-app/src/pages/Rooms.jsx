@@ -12,6 +12,45 @@ export default function Rooms() {
             <Helmet>
                 <title>Rooms & Glamping Tents | Kinga Resorts</title>
                 <meta name="description" content="Explore our luxurious rooms and glamping tents. Three distinct experiences crafted for the ultimate comfort and nature discovery." />
+                <link rel="canonical" href="https://kingaresorts.com/rooms" />
+                <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Kinga Resorts Accommodation Options",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "HotelRoom",
+        "name": "Standard Rooms",
+        "url": "https://kingaresorts.com/rooms/standard"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "HotelRoom",
+        "name": "Deluxe Rooms",
+        "url": "https://kingaresorts.com/rooms/deluxe"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "HotelRoom",
+        "name": "Luxury Glamping Tents",
+        "url": "https://kingaresorts.com/rooms/glamping-tent"
+      }
+    }
+  ]
+}
+`}
+                </script>
             </Helmet>
             <header
                 className="d-flex align-items-center justify-content-center text-white position-relative"

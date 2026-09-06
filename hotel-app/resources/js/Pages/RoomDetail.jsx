@@ -29,6 +29,26 @@ export default function RoomDetail({ room }) {
             <Head>
                 <title>{`${room.name} | Kinga Resorts`}</title>
                 <meta name="description" content={`Book the ${room.name} at Kinga Resorts. ${room.tagline}`} />
+                <link rel="canonical" href={`https://kingaresorts.com/rooms/${room.slug}`} />
+                <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HotelRoom",
+  "name": room.name,
+  "description": room.description,
+  "url": "https://kingaresorts.com/rooms/" + room.slug,
+  "image": "https://kingaresorts.com/" + room.image_path,
+  "occupancy": {
+    "@type": "QuantitativeValue",
+    "value": room.capacity
+  },
+  "amenityFeature": (room.features || []).map(f => ({
+    "@type": "LocationFeatureSpecification",
+    "name": f,
+    "value": true
+  }))
+})}
+                </script>
             </Head>
             {/* Breadcrumb */}
             <div style={{ background: "#f5f2eb", padding: "14px 0", borderBottom: "1px solid #ebe3cc" }}>

@@ -102,6 +102,11 @@ export default function Create({ rooms = [], selectedRoomId = null }) {
 
     return (
         <MainLayout>
+            <Head>
+                <title>Book Your Stay | Kinga Resorts</title>
+                <meta name="robots" content="noindex, follow" />
+                <link rel="canonical" href="https://kingaresorts.com/bookings/create" />
+            </Head>
             {/* Booking Hero */}
             <header 
                 className="booking-hero d-flex align-items-center justify-content-center text-white position-relative" 

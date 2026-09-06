@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import MainLayout from '../../components/MainLayout';
 import { rooms } from '../../data/rooms';
 
@@ -100,6 +101,11 @@ export default function Create() {
 
     return (
         <MainLayout>
+            <Helmet>
+                <title>Book Your Stay | Kinga Resorts</title>
+                <meta name="robots" content="noindex, follow" />
+                <link rel="canonical" href="https://kingaresorts.com/bookings/create" />
+            </Helmet>
             {/* Booking Hero */}
             <header 
                 className="booking-hero d-flex align-items-center justify-content-center text-white position-relative" 
