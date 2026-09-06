@@ -195,7 +195,7 @@ export default function Home() {
     };
 
     // FAQ Accordion State
-    const [faqOpen, setFaqOpen] = useState({ 0: true, 1: false, 2: false });
+    const [faqOpen, setFaqOpen] = useState({ 0: true, 1: false, 2: false, 3: false, 4: false });
     const toggleFaq = (idx) => {
         setFaqOpen(prev => ({ ...prev, [idx]: !prev[idx] }));
     };
@@ -221,8 +221,98 @@ export default function Home() {
     return (
         <MainLayout>
             <Helmet>
-                <title>Kinga Resorts | Luxury Glamping & Rooms</title>
+                <title>Kinga Resorts | Luxury Nature Retreat & Glamping in Machakos, Kenya</title>
                 <meta name="description" content="Discover serenity at Kinga Resorts, the ultimate luxury nature retreat and glamping experience in Machakos County." />
+                <link rel="canonical" href="https://kingaresorts.com/" />
+                <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://kingaresorts.com/#website",
+      "url": "https://kingaresorts.com/",
+      "name": "Kinga Resorts",
+      "description": "Adventure in Comfort, Luxury in Nature"
+    },
+    {
+      "@type": "Hotel",
+      "@id": "https://kingaresorts.com/#hotel",
+      "name": "Kinga Resorts",
+      "description": "Luxury Nature Retreat & Glamping in Machakos, Kenya",
+      "url": "https://kingaresorts.com/",
+      "telephone": "+254719525314",
+      "email": "info@kingaresorts.com",
+      "priceRange": "KES 8,500 - KES 14,000 / night",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "P.O. Box 1056-90100",
+        "addressLocality": "Machakos",
+        "addressRegion": "Machakos County",
+        "addressCountry": "KE"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://kingaresorts.com/#organization",
+      "name": "One Solid Link (OSL)",
+      "url": "https://kingaresorts.com/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Kinga Resorts located and how far is it from Nairobi and JKIA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kinga Resorts is located in Machakos County, Kenya. It is a scenic drive from Nairobi and easily accessible from Jomo Kenyatta International Airport (JKIA)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What accommodation options and glamping experiences are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer Standard Rooms, Deluxe Rooms, and Luxury Glamping Tents, all designed for comfort and elegance in nature."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What conference and corporate event facilities are available at Kinga Resorts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide state-of-the-art conference halls that can host up to 500+ delegates with modern AV equipment and high-speed WiFi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What outdoor wedding, banquet, and lawn capacities are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our beautiful garden lawns can host outdoor weddings and banquets for over 2,000+ guests with dedicated catering services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are room reservations and payments handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reservations can be made securely online or by contacting our front desk. We accept major currencies including KES and USD via card or mobile money."
+          }
+        }
+      ]
+    }
+  ]
+}
+`}
+                </script>
             </Helmet>
             <div className="position-relative">
                 {/* Hero Carousel */}
@@ -850,16 +940,24 @@ export default function Home() {
                             <div className="accordion d-flex flex-column gap-3">
                                 {[
                                     {
-                                        q: "What is the cancellation policy?",
-                                        a: "We offer free cancellation up to 48 hours before your scheduled check-in time. Cancellations made within 48 hours will be charged for the first night of the stay."
+                                        q: "Where is Kinga Resorts located and how far is it from Nairobi and JKIA?",
+                                        a: "Kinga Resorts is located in Machakos County, Kenya. It is a scenic drive from Nairobi and easily accessible from Jomo Kenyatta International Airport (JKIA)."
                                     },
                                     {
-                                        q: "Are pets allowed at the resort?",
-                                        a: "We are a pet-friendly resort! We welcome well-behaved pets in our Garden Villas. A small cleaning fee applies, and advanced notice is required."
+                                        q: "What accommodation options and glamping experiences are available?",
+                                        a: "We offer Standard Rooms, Deluxe Rooms, and Luxury Glamping Tents, all designed for comfort and elegance in nature."
                                     },
                                     {
-                                        q: "Do you offer dietary specific menus?",
-                                        a: "Absolutely. Our culinary team is happy to cater to vegetarian, vegan, gluten-free, and other dietary requirements. Please inform us upon booking or at check-in."
+                                        q: "What conference and corporate event facilities are available at Kinga Resorts?",
+                                        a: "We provide state-of-the-art conference halls that can host up to 500+ delegates with modern AV equipment and high-speed WiFi."
+                                    },
+                                    {
+                                        q: "What outdoor wedding, banquet, and lawn capacities are supported?",
+                                        a: "Our beautiful garden lawns can host outdoor weddings and banquets for over 2,000+ guests with dedicated catering services."
+                                    },
+                                    {
+                                        q: "How are room reservations and payments handled?",
+                                        a: "Reservations can be made securely online or by contacting our front desk. We accept major currencies including KES and USD via card or mobile money."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="accordion-item border-0 shadow-sm rounded bg-white overflow-hidden">

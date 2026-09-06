@@ -7,7 +7,8 @@ export default function Services() {
         <MainLayout>
             <Head>
                 <title>Dining, Events & Services | Kinga Resorts</title>
-                <meta name="description" content="Discover exceptional dining venues, state-of-the-art conference halls, and nature recreation at Kinga Resorts." />
+                <meta name="description" content="Discover exceptional dining venues, state-of-the-art conference halls for 500+ delegates, and outdoor banquet spaces for over 2,000 guests at Kinga Resorts." />
+                <link rel="canonical" href="https://kingaresorts.com/services" />
             </Head>
             {/* Header */}
             <header 
